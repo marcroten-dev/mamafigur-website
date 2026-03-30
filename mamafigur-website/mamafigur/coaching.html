@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coaching & Kurse — MamaFigur.ch</title>
+  <meta name="description" content="1:1 Coaching und Onlinekurse für junge Mamas, die gesund abnehmen möchten. Individuelle Begleitung, Ernährungspläne und Workouts — auf Deutsch & Französisch." />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .faq { display: flex; flex-direction: column; gap: 0; }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 22px 0;
+    }
+    .faq-q {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .faq-q::after {
+      content: '+';
+      font-size: 24px;
+      font-weight: 300;
+      color: var(--terra);
+      flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+    .faq-item.open .faq-q::after { transform: rotate(45deg); }
+    .faq-a {
+      display: none;
+      font-size: 14.5px;
+      color: var(--mid);
+      line-height: 1.7;
+      font-weight: 300;
+      padding-top: 14px;
+      max-width: 680px;
+    }
+    .faq-item.open .faq-a { display: block; }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 768px) { .process-steps { grid-template-columns: 1fr 1fr; } }
+    .process-step {
+      text-align: center;
+      padding: 32px 24px;
+      background: white;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      position: relative;
+    }
+    .step-num {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--terra-pale);
+      color: var(--terra);
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+    }
+    .process-step h4 {
+      font-size: 17px;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+    .process-step p {
+      font-size: 13px;
+      color: var(--mid);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    .guarantee-box {
+      background: linear-gradient(135deg, #FFF8F5 0%, #FFF3EE 100%);
+      border: 2px solid var(--terra-pale);
+      border-radius: 20px;
+      padding: 36px 40px;
+      display: flex;
+      gap: 28px;
+      align-items: flex-start;
+    }
+    .guarantee-box__icon { font-size: 48px; flex-shrink: 0; }
+    .guarantee-box h3 { font-size: 24px; margin-bottom: 10px; }
+    .guarantee-box p { font-size: 14.5px; color: var(--mid); font-weight: 300; line-height: 1.7; }
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">Mama<span>Figur</span></a>
+    <ul class="nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="meine-geschichte.html">Meine Geschichte</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="coaching.html">Coaching</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <a href="kontakt.html" class="btn btn--primary nav__cta">Gratis Erstgespräch</a>
+    <button class="nav__hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu">
+  <button class="mobile-menu__close">✕</button>
+  <a href="index.html">Home</a>
+  <a href="meine-geschichte.html">Meine Geschichte</a>
+  <a href="blog.html">Blog</a>
+  <a href="coaching.html">Coaching</a>
+  <a href="kontakt.html">Kontakt</a>
+</div>
+
+<div class="page-hero">
+  <div class="container">
+    <span class="label">Coaching & Kurse</span>
+    <h1>Dein Weg zu<br><em>dir selbst.</em></h1>
+    <p>Individuelle Begleitung für junge Mamas in der Schweiz — auf Deutsch & Français.</p>
+  </div>
+</div>
+
+<!-- PROCESS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header text-center">
+      <span class="label">So funktioniert es</span>
+      <h2 style="margin-top:12px;">In 4 Schritten zu<br><em>deinem Ergebnis</em></h2>
+    </div>
+    <div class="process-steps">
+      <div class="process-step" data-reveal>
+        <div class="step-num">1</div>
+        <h4>Gratis Erstgespräch</h4>
+        <p>30 Minuten, kein Druck. Ich lerne dich kennen — deine Situation, deine Ziele, deine Herausforderungen.</p>
+      </div>
+      <div class="process-step" data-reveal data-delay="100">
+        <div class="step-num">2</div>
+        <h4>Dein persönlicher Plan</h4>
+        <p>Ernährung, Bewegung, Mentales — komplett auf dich zugeschnitten. Kein Einheitsplan von der Stange.</p>
+      </div>
+      <div class="process-step" data-reveal data-delay="200">
+        <div class="step-num">3</div>
+        <h4>Wöchentliche Begleitung</h4>
+        <p>Video-Calls, WhatsApp-Support, Anpassungen. Du bist nie allein auf dem Weg.</p>
+      </div>
+      <div class="process-step" data-reveal data-delay="300">
+        <div class="step-num">4</div>
+        <h4>Deine Transformation</h4>
+        <p>Ergebnisse, auf die du stolz sein kannst — und die bleiben. Weil du verstehst, wie es funktioniert.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section section--alt" id="preise">
+  <div class="container">
+    <div class="section-header text-center">
+      <span class="label">Angebote</span>
+      <h2 style="margin-top:12px;">Wähle deinen<br><em>Weg</em></h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card" data-reveal>
+        <div class="service-icon">📋</div>
+        <h3>Erstgespräch</h3>
+        <p>Der erste Schritt. Kein Risiko, kein Commitment — einfach kennenlernen und sehen, ob wir zueinander passen.</p>
+        <div class="service-price"><span class="service-price__amount">0 CHF</span></div>
+        <ul class="service-features">
+          <li class="service-feature">30 Minuten via Zoom</li>
+          <li class="service-feature">Analyse deiner Situation</li>
+          <li class="service-feature">Erste Empfehlungen</li>
+          <li class="service-feature">Kein Verkaufsdruck</li>
+        </ul>
+        <a href="kontakt.html" class="btn btn--outline">Jetzt buchen</a>
+      </div>
+      <div class="service-card service-card--featured" data-reveal data-delay="100">
+        <span class="service-badge">⭐ Empfohlen</span>
+        <div class="service-icon">🤝</div>
+        <h3>1:1 Coaching<br>8 Wochen</h3>
+        <p>Die intensivste Begleitung. Alles individuell — Ernährung, Bewegung, Mindset. Mit mir an deiner Seite.</p>
+        <div class="service-price">
+          <span class="service-price__amount">CHF 390</span>
+          <span class="service-price__period">/ Monat · 2 Monate</span>
+        </div>
+        <ul class="service-features">
+          <li class="service-feature">Persönlicher Ernährungsplan</li>
+          <li class="service-feature">Wöchentliche Video-Calls (45 Min.)</li>
+          <li class="service-feature">WhatsApp Mon–Fri</li>
+          <li class="service-feature">Individuelles Workout-Programm</li>
+          <li class="service-feature">Rezepte & Einkaufslisten</li>
+          <li class="service-feature">14 Tage Geld-zurück-Garantie</li>
+        </ul>
+        <a href="kontakt.html" class="btn btn--primary">Jetzt starten</a>
+      </div>
+      <div class="service-card" data-reveal data-delay="200">
+        <div class="service-icon">💻</div>
+        <h3>Online Kurs<br>6 Wochen</h3>
+        <p>Die komplette Methode in deinem Tempo. Ideal wenn du flexibel bleiben möchtest oder Coaching-Budget sparen willst.</p>
+        <div class="service-price"><span class="service-price__amount">CHF 247</span><span class="service-price__period">einmalig</span></div>
+        <ul class="service-features">
+          <li class="service-feature">6 Module à 4 Video-Lektionen</li>
+          <li class="service-feature">Ernährungs- & Workout-Pläne</li>
+          <li class="service-feature">Private Facebook-Gruppe</li>
+          <li class="service-feature">Lebenslanger Zugang</li>
+          <li class="service-feature">Updates inklusive</li>
+        </ul>
+        <a href="kontakt.html" class="btn btn--sage">Kurs kaufen</a>
+      </div>
+    </div>
+
+    <!-- GUARANTEE -->
+    <div class="guarantee-box" style="margin-top:40px;" data-reveal>
+      <div class="guarantee-box__icon">🛡️</div>
+      <div>
+        <h3>14-Tage Geld-zurück-Garantie</h3>
+        <p>Ich stehe hinter meiner Arbeit. Wenn du nach 14 Tagen nicht das Gefühl hast, dass das Coaching zu dir passt, bekommst du dein Geld vollständig zurück — ohne Fragen. Weil ich nur mit Mamas arbeite, denen ich wirklich helfen kann.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header text-center">
+      <span class="label">Ergebnisse</span>
+      <h2 style="margin-top:12px;">Was meine<br><em>Klientinnen sagen</em></h2>
+    </div>
+    <div class="testimonials-track">
+      <div class="testimonial" data-reveal>
+        <div class="testimonial__stars">★★★★★</div>
+        <p class="testimonial__text">In 8 Wochen 7 kg verloren — und das mit einem 4 Monate alten Baby. Ich hätte es nie gedacht. Lisa hat mir gezeigt, dass es nicht um Perfektion geht, sondern um Kontinuität.</p>
+        <div class="testimonial__author">
+          <div class="testimonial__avatar">👩</div>
+          <div><div class="testimonial__name">Anna L.</div><div class="testimonial__meta">Mama von Felix · Zürich</div></div>
+        </div>
+      </div>
+      <div class="testimonial" data-reveal data-delay="100">
+        <div class="testimonial__stars">★★★★★</div>
+        <p class="testimonial__text">Der Online-Kurs war perfekt für meinen chaotischen Alltag. Ich konnte alles schauen, wenn das Baby schlief. Die Videos sind klar, verständlich und umsetzbar. Absolute Empfehlung!</p>
+        <div class="testimonial__author">
+          <div class="testimonial__avatar">👩‍🦱</div>
+          <div><div class="testimonial__name">Clara M.</div><div class="testimonial__meta">Mama von Sophie · Bern</div></div>
+        </div>
+      </div>
+      <div class="testimonial" data-reveal data-delay="200">
+        <div class="testimonial__stars">★★★★★</div>
+        <p class="testimonial__text">Was mich am meisten überrascht hat: Lisa antwortet wirklich auf WhatsApp. Ich fühlte mich nie allein. Das 1:1 Coaching war das Beste, was ich für mich getan habe.</p>
+        <div class="testimonial__author">
+          <div class="testimonial__avatar">👩‍🦰</div>
+          <div><div class="testimonial__name">Sandra K.</div><div class="testimonial__meta">Mama von Tom · Basel</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section--alt">
+  <div class="container container--narrow">
+    <div class="section-header">
+      <span class="label">Fragen</span>
+      <h2 style="margin-top:12px;">Häufige<br><em>Fragen</em></h2>
+    </div>
+    <div class="faq">
+      <div class="faq-item">
+        <div class="faq-q">Bin ich bereit für das Coaching, wenn mein Baby erst 6 Wochen alt ist?</div>
+        <div class="faq-a">Grundsätzlich empfehle ich, mit dem aktiven Coaching frühestens nach dem Wochenbett (6–8 Wochen nach der Geburt) zu beginnen. Das Erstgespräch kann aber jederzeit stattfinden. Bei medizinischen Fragen arbeitest du immer in Absprache mit deiner Ärztin.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Kann ich das Coaching auch auf Französisch machen?</div>
+        <div class="faq-a">Ja! Ich bin zweisprachig und biete alle Leistungen sowohl auf Deutsch als auch auf Französisch an. Das ist besonders für Mamas in der Romandie oder in zweisprachigen Kantonen praktisch.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Ich stille noch — ist Abnehmen trotzdem möglich?</div>
+        <div class="faq-a">Absolut. Stillen erhöht den Kalorienbedarf, was sich positiv auf die Gewichtsabnahme auswirken kann. Ich passe deinen Ernährungsplan an die Stillzeit an — dein Baby und du bekommt alles, was ihr braucht.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Wie viel Zeit brauche ich pro Tag für das Programm?</div>
+        <div class="faq-a">Ich plane realistisch. Die Workouts dauern 15–20 Minuten. Die Mahlzeiten sind so konzipiert, dass sie sich schnell zubereiten lassen — auch mit einem Baby auf dem Arm. Ich weiß, wie wenig Zeit Mamas haben.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Was passiert nach den 8 Wochen Coaching?</div>
+        <div class="faq-a">Du hast alle Werkzeuge, um eigenständig weiterzumachen. Ich biete auch eine "Maintenance"-Option an (monatliche Check-ins) für alle, die weiter begleitet werden möchten. Aber die meisten meiner Klientinnen sind nach 8 Wochen selbstständig.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container" style="max-width:700px;">
+    <div class="optin" data-reveal>
+      <span class="label">Bereit loszulegen?</span>
+      <h2>Starte mit einem<br><em>kostenlosen Gespräch</em></h2>
+      <p>30 Minuten. Kein Verkaufsdruck. Ich bin einfach für dich da.</p>
+      <a href="kontakt.html" class="btn btn--primary" style="font-size:15px;padding:16px 36px;">Erstgespräch buchen →</a>
+      <p class="optin-note">Auf Deutsch oder Français · Via Zoom · Kostenlos</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="nav__logo">Mama<span style="color:var(--terra)">Figur</span></a>
+        <p>Begleitung für junge Mamas in der Schweiz.</p>
+        <div class="footer__social"><a href="#">📸</a><a href="#">📌</a><a href="#">📘</a></div>
+      </div>
+      <div class="footer__col"><h4>Navigation</h4><ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="meine-geschichte.html">Meine Geschichte</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="coaching.html">Coaching</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul></div>
+      <div class="footer__col"><h4>Angebote</h4><ul>
+        <li><a href="#preise">Erstgespräch (gratis)</a></li>
+        <li><a href="#preise">1:1 Coaching</a></li>
+        <li><a href="#preise">Online Kurs</a></li>
+      </ul></div>
+      <div class="footer__col"><h4>Rechtliches</h4><ul>
+        <li><a href="kontakt.html">Impressum</a></li>
+        <li><a href="kontakt.html">Datenschutz</a></li>
+        <li><a href="kontakt.html">AGB</a></li>
+      </ul></div>
+    </div>
+    <div class="footer__bottom"><span>© 2025 MamaFigur.ch</span><span>Made with 💚 in der Schweiz</span></div>
+    <p class="footer__disclaimer">Hinweis: Die Inhalte dieser Website ersetzen keine medizinische Beratung. Bei gesundheitlichen Fragen wende dich an deine Ärztin.</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.closest('.faq-item');
+      item.classList.toggle('open');
+    });
+  });
+</script>
+</body>
+</html>
