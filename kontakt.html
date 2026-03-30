@@ -2,8 +2,8 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Kontakt & Erstgespräch — MamaFigur.ch</title>
-<meta name="description" content="Schreib mir — Gratis Erstgespräch buchen, Fragen stellen oder einfach Hallo sagen. Ich freue mich auf dich!"/>
+<title>Kontakt & Finanzgespräch — FinanzSchweiz.ch</title>
+<meta name="description" content="Schreib mir — Gratis Finanzgespräch buchen, Fragen stellen oder einfach Hallo sagen. Ich freue mich auf dich!"/>
 <link rel="stylesheet" href="css/style.css"/>
 <style>
 .contact-grid{display:grid;grid-template-columns:1fr 380px;gap:72px;align-items:start}
@@ -30,7 +30,7 @@
 </head>
 <body>
 <nav class="nav"><div class="nav-inner">
-  <a href="index.html" class="logo">Mama<span>Figur</span></a>
+  <a href="index.html" class="logo">Finanz<span>Schweiz</span></a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li><li><a href="meine-geschichte.html">Meine Geschichte</a></li>
     <li><a href="blog.html">Blog</a></li><li><a href="coaching.html">Coaching</a></li>
@@ -69,7 +69,7 @@
 
         <!-- FORM -->
         <form id="contact-form" action="https://formspree.io/f/YOURFORMID" method="POST">
-          <input type="hidden" name="_subject" value="Neue Kontaktanfrage MamaFigur.ch"/>
+          <input type="hidden" name="_subject" value="Neue Kontaktanfrage FinanzSchweiz.ch"/>
           <!-- Honeypot anti-spam -->
           <input type="text" name="_gotcha" style="display:none"/>
 
@@ -91,23 +91,34 @@
             <label for="interesse">Ich interessiere mich für...</label>
             <select id="interesse" name="interesse">
               <option value="">Bitte auswählen</option>
-              <option value="erstgespraech">Gratis Erstgespräch (30 Min.)</option>
-              <option value="coaching">1:1 Coaching (8 Wochen)</option>
-              <option value="onlinekurs">Online Kurs</option>
+              <option value="erstgespraech">Gratis Finanzgespräch (30 Min.)</option>
+              <option value="coaching">1:1 Finanzcoaching (12 Wochen)</option>
+              <option value="modul">Spezial-Modul</option>
               <option value="fragen">Allgemeine Fragen</option>
               <option value="kooperation">Kooperation / Medien</option>
             </select>
           </div>
           <div class="form-group">
-            <label for="baby">Wie alt ist dein Baby / bist du schwanger?</label>
-            <select id="baby" name="baby_alter">
+            <label for="situation">Was ist Deine grösste finanzielle Herausforderung?</label>
+            <select id="situation" name="situation">
               <option value="">Bitte auswählen</option>
-              <option value="schwanger">Ich bin schwanger</option>
-              <option value="0-3">Baby ist 0–3 Monate alt</option>
-              <option value="3-6">Baby ist 3–6 Monate alt</option>
-              <option value="6-12">Baby ist 6–12 Monate alt</option>
-              <option value="12+">Baby ist über 12 Monate alt</option>
-              <option value="planung">Ich plane eine Schwangerschaft</option>
+              <option value="ahv">AHV / Rentenlücke</option>
+              <option value="steuern">Steuern optimieren</option>
+              <option value="investieren">Investieren beginnen</option>
+              <option value="selbststaendig">Selbstständige Planung</option>
+              <option value="vermögen">Vermögensaufbau</option>
+              <option value="sonstiges">Sonstiges</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="beruf">Wo befindest Du Dich beruflich?</label>
+            <select id="beruf" name="beruf">
+              <option value="">Bitte auswählen</option>
+              <option value="angestelle">Angestellte/r</option>
+              <option value="selbststaendige">Selbstständige/r</option>
+              <option value="unternehmer">Unternehmerin/Unternehmer</option>
+              <option value="wechsel">Gerade in Veränderung</option>
+              <option value="pensioniert">Nach Pensionierung</option>
             </select>
           </div>
           <div class="form-group">
@@ -134,9 +145,9 @@
       <div data-reveal data-delay="150">
         <span class="lbl" style="margin-bottom:18px">So erreichst du mich</span>
 
-        <div class="info-item"><div class="info-icon">📧</div><div><div class="info-lbl">E-Mail</div><div class="info-val">hallo@mamafigur.ch</div></div></div>
-        <div class="info-item"><div class="info-icon">📸</div><div><div class="info-lbl">Instagram</div><div class="info-val">@mamafigur</div></div></div>
+        <div class="info-item"><div class="info-icon">📧</div><div><div class="info-lbl">E-Mail</div><div class="info-val">hallo@finanzschweiz.ch</div></div></div>
         <div class="info-item"><div class="info-icon">🇨🇭</div><div><div class="info-lbl">Standort</div><div class="info-val">Schweiz · Remote weltweit</div></div></div>
+        <div class="info-item"><div class="info-icon">👋</div><div><div class="info-lbl">LinkedIn</div><div class="info-val">Katharina Roten, MD MBA</div></div></div>
         <div class="info-item"><div class="info-icon">🗣️</div><div><div class="info-lbl">Sprachen</div><div class="info-val">Deutsch & Français</div></div></div>
         <div class="info-item"><div class="info-icon">⏱️</div><div><div class="info-lbl">Antwortzeit</div><div class="info-val">24–48 Stunden</div></div></div>
 
@@ -144,9 +155,9 @@
         <div style="margin-top:32px">
           <span class="lbl" style="margin-bottom:16px">Häufige Fragen</span>
           <div style="display:flex;flex-direction:column">
-            <div class="faq-item"><div class="faq-q" style="font-size:16px">Ist das Erstgespräch wirklich kostenlos?</div><div class="faq-a">Ja, 100% kostenlos und unverbindlich. Kein Verkaufsdruck — ich möchte einfach sehen, ob wir gut zusammenpassen.</div></div>
-            <div class="faq-item"><div class="faq-q" style="font-size:16px">Geht das auch auf Français?</div><div class="faq-a">Absolut. Ich bin zweisprachig aufgewachsen und biete alle Leistungen auf Deutsch und Français an.</div></div>
-            <div class="faq-item"><div class="faq-q" style="font-size:16px">Wie findet das Coaching statt?</div><div class="faq-a">Alles via Zoom — du brauchst keinen Babysitter und kannst von überall teilnehmen. Auch WhatsApp-Support ist inklusive.</div></div>
+            <div class="faq-item"><div class="faq-q" style="font-size:16px">Ist das Finanzgespräch wirklich kostenlos?</div><div class="faq-a">Ja, 100% kostenlos und unverbindlich. Kein Verkaufsdruck — ich möchte einfach sehen, ob wir gut zusammenpassen.</div></div>
+            <div class="faq-item"><div class="faq-q" style="font-size:16px">Kann ich alles auch auf Français machen?</div><div class="faq-a">Absolut. Ich bin zweisprachig und biete alle Leistungen auf Deutsch und Français an.</div></div>
+            <div class="faq-item"><div class="faq-q" style="font-size:16px">Wie findet das Finanzcoaching statt?</div><div class="faq-a">Alles via Zoom — du kannst von überall, jederzeit teilnehmen. Auch Email/WhatsApp-Support für Fragen zwischen den Sessions ist inklusive.</div></div>
           </div>
         </div>
       </div>
@@ -160,25 +171,25 @@
     <div class="legal-box">
       <h3>Impressum</h3>
       <p>
-        <strong>MamaFigur</strong><br>
-        [Vollständiger Name]<br>
+        <strong>FinanzSchweiz</strong><br>
+        Dr. Katharina Roten, MD MBA<br>
         [Strasse und Nr.]<br>
         [PLZ] [Ort], Schweiz<br><br>
-        E-Mail: hallo@mamafigur.ch<br>
-        Website: www.mamafigur.ch<br><br>
+        E-Mail: hallo@finanzschweiz.ch<br>
+        Website: www.finanzschweiz.ch<br><br>
         UID: [CHE-xxx.xxx.xxx] (nach Anmeldung ausfüllen)<br><br>
-        <em>Inhaltlich verantwortlich für diese Website: [Vollständiger Name]</em>
+        <em>Inhaltlich verantwortlich für diese Website: Dr. Katharina Roten</em>
       </p>
     </div>
     <div class="legal-box" id="datenschutz" style="margin-top:16px">
       <h3>Datenschutzerklärung</h3>
       <p>
-        <strong>Verantwortliche Stelle:</strong> MamaFigur, [Adresse], Schweiz<br><br>
-        <strong>Erhobene Daten:</strong> Bei der Nutzung des Kontaktformulars werden Name, E-Mail-Adresse und der Inhalt deiner Nachricht gespeichert. Diese Daten werden ausschließlich zur Beantwortung deiner Anfrage verwendet.<br><br>
+        <strong>Verantwortliche Stelle:</strong> FinanzSchweiz, Dr. Katharina Roten, Schweiz<br><br>
+        <strong>Erhobene Daten:</strong> Bei der Nutzung des Kontaktformulars werden Name, E-Mail-Adresse, Berufssituation und der Inhalt deiner Nachricht gespeichert. Diese Daten werden ausschließlich zur Beantwortung deiner Anfrage und zur Terminfindung für dein Finanzgespräch verwendet.<br><br>
         <strong>Formspree:</strong> Das Kontaktformular nutzt den Dienst Formspree (formspree.io). Deine Daten werden über deren Server übertragen. Weitere Informationen findest du unter formspree.io/legal/privacy-policy.<br><br>
-        <strong>Weitergabe:</strong> Deine Daten werden nicht an Dritte weitergegeben und nicht für Werbezwecke verwendet.<br><br>
+        <strong>Weitergabe:</strong> Deine Daten werden nicht an Dritte weitergegeben und nicht für Werbezwecke verwendet. Vertraulichkeit ist mir sehr wichtig.<br><br>
         <strong>Löschung:</strong> Deine Daten werden gelöscht, sobald sie nicht mehr benötigt werden. Du kannst die Löschung jederzeit per E-Mail anfragen.<br><br>
-        <strong>Rechte:</strong> Du hast das Recht auf Auskunft, Berichtigung und Löschung deiner gespeicherten Daten. Kontakt: hallo@mamafigur.ch<br><br>
+        <strong>Rechte:</strong> Du hast das Recht auf Auskunft, Berichtigung und Löschung deiner gespeicherten Daten. Kontakt: hallo@finanzschweiz.ch<br><br>
         <em>Stand: März 2025</em>
       </p>
     </div>
@@ -187,13 +198,13 @@
 
 <footer><div class="container">
   <div class="footer-grid">
-    <div class="footer-brand"><a href="index.html" class="footer-logo">Mama<span>Figur</span></a><p>Begleitung für junge Mamas in der Schweiz.</p><div class="footer-social"><a href="#">📸</a><a href="#">📌</a><a href="#">📘</a></div></div>
+    <div class="footer-brand"><a href="index.html" class="footer-logo">Finanz<span style="color:var(--terra)">Schweiz</span></a><p>Begleitung für Schweizer Professionelle auf ihrem Weg zu finanzieller Unabhängigkeit.</p><div class="footer-social"><a href="#">🔗</a><a href="#">📧</a></div></div>
     <div class="footer-col"><h4>Navigation</h4><ul><li><a href="index.html">Home</a></li><li><a href="meine-geschichte.html">Meine Geschichte</a></li><li><a href="blog.html">Blog</a></li><li><a href="coaching.html">Coaching</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
-    <div class="footer-col"><h4>Artikel</h4><ul><li><a href="articles/abnehmen-schwangerschaft.html">Abnehmen in der Schwangerschaft</a></li><li><a href="articles/nach-geburt-abnehmen.html">Nach der Geburt</a></li><li><a href="articles/ernaehrungsplan.html">Ernährungsplan</a></li><li><a href="articles/sport-nach-geburt.html">Sport</a></li></ul></div>
+    <div class="footer-col"><h4>Wissensartikel</h4><ul><li><a href="blog.html">AHV &amp; Rentenlücke</a></li><li><a href="blog.html">Steuern &amp; Planung</a></li><li><a href="blog.html">Investieren &amp; Vermögen</a></li><li><a href="blog.html">Selbstständige</a></li></ul></div>
     <div class="footer-col"><h4>Rechtliches</h4><ul><li><a href="kontakt.html#impressum">Impressum</a></li><li><a href="kontakt.html#datenschutz">Datenschutz</a></li><li><a href="kontakt.html">AGB</a></li></ul></div>
   </div>
-  <div class="footer-bottom"><span>© 2025 MamaFigur.ch</span><span>Made with 💚 in der Schweiz</span></div>
-  <p class="footer-disc">Hinweis: Die Inhalte dieser Website ersetzen keine medizinische Beratung.</p>
+  <div class="footer-bottom"><span>© 2025 FinanzSchweiz.ch</span><span>Made with 💚 in der Schweiz</span></div>
+  <p class="footer-disc">Hinweis: Die Inhalte dieser Website ersetzen keine professionelle Finanzberatung. Konsultiere einen Finanzberater für deine spezifische Situation.</p>
 </div></footer>
 
 <script src="js/main.js"></script>

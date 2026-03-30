@@ -3,10 +3,140 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Coaching & Kurse — MamaFigur.ch</title>
-  <meta name="description" content="1:1 Coaching und Onlinekurse für junge Mamas, die gesund abnehmen möchten. Individuelle Begleitung, Ernährungspläne und Workouts — auf Deutsch & Französisch." />
+  <title>Finanzcoaching & Kurse — FinanzSchweiz.ch</title>
+  <meta name="description" content="1:1 Finanzcoaching und spezialisierte Module für Schweizer Professionelle. Individuelle Begleitung zu AHV, Steuern und Vermögensaufbau — auf Deutsch & Français." />
   <link rel="stylesheet" href="css/style.css" />
   <style>
+    /* PRICING CARDS */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-bottom: 60px;
+    }
+    @media (max-width: 1024px) { .services-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 640px) { .services-grid { grid-template-columns: 1fr; } }
+
+    .service-card {
+      background: #fff;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      padding: 40px 32px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .service-card:hover {
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+      transform: translateY(-6px);
+    }
+    .service-card--featured {
+      background: linear-gradient(135deg, #FFF8F5 0%, #FFF3EE 100%);
+      border: 2px solid var(--terra);
+      transform: scale(1.04);
+    }
+    .service-card--featured:hover {
+      box-shadow: 0 28px 80px rgba(196, 113, 79, 0.2);
+      transform: translateY(-8px) scale(1.04);
+    }
+
+    .service-badge {
+      position: absolute;
+      top: -14px;
+      left: 32px;
+      background: var(--terra);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 20px;
+    }
+
+    .service-icon {
+      font-size: 48px;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .service-card h3 {
+      font-family: var(--fd);
+      font-size: 24px;
+      font-weight: 500;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .service-card > p {
+      font-size: 14px;
+      color: var(--mid);
+      font-weight: 300;
+      line-height: 1.75;
+      margin-bottom: 28px;
+      flex-grow: 1;
+    }
+
+    .service-price {
+      background: rgba(196, 113, 79, 0.06);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 28px;
+      text-align: center;
+    }
+    .service-card--featured .service-price {
+      background: rgba(196, 113, 79, 0.12);
+    }
+
+    .service-price__amount {
+      display: block;
+      font-family: var(--fd);
+      font-size: 36px;
+      font-weight: 600;
+      color: var(--terra);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .service-price__period {
+      display: block;
+      font-size: 13px;
+      color: var(--mid);
+      font-weight: 400;
+    }
+
+    .service-features {
+      list-style: none;
+      margin-bottom: 32px;
+      flex-grow: 1;
+    }
+
+    .service-feature {
+      font-size: 13px;
+      color: var(--mid);
+      font-weight: 400;
+      line-height: 1.8;
+      padding-left: 24px;
+      position: relative;
+      margin-bottom: 10px;
+    }
+    .service-feature::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--terra);
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .service-card .btn {
+      width: 100%;
+      justify-content: center;
+      padding: 14px 20px;
+      font-size: 14px;
+    }
+
     .faq { display: flex; flex-direction: column; gap: 0; }
     .faq-item {
       border-bottom: 1px solid var(--border);
@@ -98,21 +228,20 @@
 <body>
 
 <nav class="nav" id="nav">
-  <div class="nav__inner">
-    <a href="index.html" class="nav__logo">Mama<span>Figur</span></a>
-    <ul class="nav__links">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Finanz<span>Schweiz</span></a>
+    <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="meine-geschichte.html">Meine Geschichte</a></li>
       <li><a href="blog.html">Blog</a></li>
       <li><a href="coaching.html">Coaching</a></li>
       <li><a href="kontakt.html">Kontakt</a></li>
-    </ul>
-    <a href="kontakt.html" class="btn btn--primary nav__cta">Gratis Erstgespräch</a>
-    <button class="nav__hamburger"><span></span><span></span><span></span></button>
+    </ul>    <a href="kontakt.html" class="btn btn--primary">Gratis Erstgespräch</a>
+    <button class="nav-hamburger"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div class="mobile-menu">
-  <button class="mobile-menu__close">✕</button>
+  <button class="mobile-menu-close">✕</button>
   <a href="index.html">Home</a>
   <a href="meine-geschichte.html">Meine Geschichte</a>
   <a href="blog.html">Blog</a>
@@ -122,9 +251,9 @@
 
 <div class="page-hero">
   <div class="container">
-    <span class="label">Coaching & Kurse</span>
-    <h1>Dein Weg zu<br><em>dir selbst.</em></h1>
-    <p>Individuelle Begleitung für junge Mamas in der Schweiz — auf Deutsch & Français.</p>
+    <span class="label">Finanzcoaching & Module</span>
+    <h1>Dein Weg zu<br><em>finanzieller Freiheit.</em></h1>
+    <p>Individuelle Begleitung für Schweizer Professionelle — auf Deutsch & Français.</p>
   </div>
 </div>
 
@@ -133,28 +262,28 @@
   <div class="container">
     <div class="section-header text-center">
       <span class="label">So funktioniert es</span>
-      <h2 style="margin-top:12px;">In 4 Schritten zu<br><em>deinem Ergebnis</em></h2>
+      <h2 style="margin-top:12px;">In 4 Schritten zu<br><em>deiner finanziellen Freiheit</em></h2>
     </div>
     <div class="process-steps">
       <div class="process-step" data-reveal>
         <div class="step-num">1</div>
         <h4>Gratis Erstgespräch</h4>
-        <p>30 Minuten, kein Druck. Ich lerne dich kennen — deine Situation, deine Ziele, deine Herausforderungen.</p>
+        <p>30 Minuten, kein Druck. Ich lerne dich kennen — deine finanzielle Situation, deine Ziele, deine Herausforderungen.</p>
       </div>
       <div class="process-step" data-reveal data-delay="100">
         <div class="step-num">2</div>
         <h4>Dein persönlicher Plan</h4>
-        <p>Ernährung, Bewegung, Mentales — komplett auf dich zugeschnitten. Kein Einheitsplan von der Stange.</p>
+        <p>AHV-Analyse, Steuern, Vermögensaufbau — komplett auf dich zugeschnitten. Kein Einheitsplan von der Stange.</p>
       </div>
       <div class="process-step" data-reveal data-delay="200">
         <div class="step-num">3</div>
         <h4>Wöchentliche Begleitung</h4>
-        <p>Video-Calls, WhatsApp-Support, Anpassungen. Du bist nie allein auf dem Weg.</p>
+        <p>Video-Calls, Email/WhatsApp-Support, Anpassungen. Du bist nie allein auf dem Weg.</p>
       </div>
       <div class="process-step" data-reveal data-delay="300">
         <div class="step-num">4</div>
         <h4>Deine Transformation</h4>
-        <p>Ergebnisse, auf die du stolz sein kannst — und die bleiben. Weil du verstehst, wie es funktioniert.</p>
+        <p>Ergebnisse, auf die du stolz sein kannst — eine klare Finanzplanung und ein ruhiges Schlafen in der Nacht.</p>
       </div>
     </div>
   </div>
@@ -165,54 +294,54 @@
   <div class="container">
     <div class="section-header text-center">
       <span class="label">Angebote</span>
-      <h2 style="margin-top:12px;">Wähle deinen<br><em>Weg</em></h2>
+      <h2 style="margin-top:12px;">Wähle deinen<br><em>Finanzierungsweg</em></h2>
     </div>
     <div class="services-grid">
       <div class="service-card" data-reveal>
         <div class="service-icon">📋</div>
-        <h3>Erstgespräch</h3>
+        <h3>Finanz-Erstgespräch</h3>
         <p>Der erste Schritt. Kein Risiko, kein Commitment — einfach kennenlernen und sehen, ob wir zueinander passen.</p>
         <div class="service-price"><span class="service-price__amount">0 CHF</span></div>
         <ul class="service-features">
           <li class="service-feature">30 Minuten via Zoom</li>
-          <li class="service-feature">Analyse deiner Situation</li>
-          <li class="service-feature">Erste Empfehlungen</li>
+          <li class="service-feature">Analyse deiner finanziellen Situation</li>
+          <li class="service-feature">Erste konkrete Empfehlungen</li>
           <li class="service-feature">Kein Verkaufsdruck</li>
         </ul>
         <a href="kontakt.html" class="btn btn--outline">Jetzt buchen</a>
       </div>
       <div class="service-card service-card--featured" data-reveal data-delay="100">
         <span class="service-badge">⭐ Empfohlen</span>
-        <div class="service-icon">🤝</div>
-        <h3>1:1 Coaching<br>8 Wochen</h3>
-        <p>Die intensivste Begleitung. Alles individuell — Ernährung, Bewegung, Mindset. Mit mir an deiner Seite.</p>
+        <div class="service-icon">💼</div>
+        <h3>1:1 Finanzcoaching<br>12 Wochen</h3>
+        <p>Die intensive Begleitung. Alles individuell — AHV-Analyse, Steuern, Investitionsstrategie. Mit mir an deiner Seite.</p>
         <div class="service-price">
-          <span class="service-price__amount">CHF 390</span>
-          <span class="service-price__period">/ Monat · 2 Monate</span>
+          <span class="service-price__amount">CHF 450</span>
+          <span class="service-price__period">/ Monat · 3 Monate</span>
         </div>
         <ul class="service-features">
-          <li class="service-feature">Persönlicher Ernährungsplan</li>
-          <li class="service-feature">Wöchentliche Video-Calls (45 Min.)</li>
-          <li class="service-feature">WhatsApp Mon–Fri</li>
-          <li class="service-feature">Individuelles Workout-Programm</li>
-          <li class="service-feature">Rezepte & Einkaufslisten</li>
-          <li class="service-feature">14 Tage Geld-zurück-Garantie</li>
+          <li class="service-feature">Persönlicher Finanzplan</li>
+          <li class="service-feature">Wöchentliche Video-Calls (60 Min.)</li>
+          <li class="service-feature">Email/WhatsApp Support</li>
+          <li class="service-feature">AHV & Steuer-Optimierung</li>
+          <li class="service-feature">Investitionsstrategie</li>
+          <li class="service-feature">30 Tage Geld-zurück-Garantie</li>
         </ul>
         <a href="kontakt.html" class="btn btn--primary">Jetzt starten</a>
       </div>
       <div class="service-card" data-reveal data-delay="200">
-        <div class="service-icon">💻</div>
-        <h3>Online Kurs<br>6 Wochen</h3>
-        <p>Die komplette Methode in deinem Tempo. Ideal wenn du flexibel bleiben möchtest oder Coaching-Budget sparen willst.</p>
-        <div class="service-price"><span class="service-price__amount">CHF 247</span><span class="service-price__period">einmalig</span></div>
+        <div class="service-icon">📚</div>
+        <h3>Spezial-Module<br>4–8 Wochen</h3>
+        <p>Fokussierte Module für spezifische Herausforderungen — AHV, Steuern als Selbstständige, erste Investments.</p>
+        <div class="service-price"><span class="service-price__amount">CHF 350–550</span><span class="service-price__period">pro Modul</span></div>
         <ul class="service-features">
-          <li class="service-feature">6 Module à 4 Video-Lektionen</li>
-          <li class="service-feature">Ernährungs- & Workout-Pläne</li>
-          <li class="service-feature">Private Facebook-Gruppe</li>
+          <li class="service-feature">4–6 fokussierte Sessions</li>
+          <li class="service-feature">Konkrete Checklisten & Tools</li>
+          <li class="service-feature">Praktische Unterlagen</li>
           <li class="service-feature">Lebenslanger Zugang</li>
-          <li class="service-feature">Updates inklusive</li>
+          <li class="service-feature">Flexible Planung</li>
         </ul>
-        <a href="kontakt.html" class="btn btn--sage">Kurs kaufen</a>
+        <a href="kontakt.html" class="btn btn--sage">Mehr erfahren</a>
       </div>
     </div>
 
@@ -220,8 +349,8 @@
     <div class="guarantee-box" style="margin-top:40px;" data-reveal>
       <div class="guarantee-box__icon">🛡️</div>
       <div>
-        <h3>14-Tage Geld-zurück-Garantie</h3>
-        <p>Ich stehe hinter meiner Arbeit. Wenn du nach 14 Tagen nicht das Gefühl hast, dass das Coaching zu dir passt, bekommst du dein Geld vollständig zurück — ohne Fragen. Weil ich nur mit Mamas arbeite, denen ich wirklich helfen kann.</p>
+        <h3>30-Tage Geld-zurück-Garantie</h3>
+        <p>Ich stehe hinter meiner Arbeit. Wenn du nach 30 Tagen nicht das Gefühl hast, dass das Finanzcoaching zu dir passt und dir konkret hilft, bekommst du dein Geld vollständig zurück — ohne Fragen. Weil ich nur mit Klientinnen arbeite, denen ich wirklich helfen kann.</p>
       </div>
     </div>
   </div>
@@ -237,26 +366,26 @@
     <div class="testimonials-track">
       <div class="testimonial" data-reveal>
         <div class="testimonial__stars">★★★★★</div>
-        <p class="testimonial__text">In 8 Wochen 7 kg verloren — und das mit einem 4 Monate alten Baby. Ich hätte es nie gedacht. Lisa hat mir gezeigt, dass es nicht um Perfektion geht, sondern um Kontinuität.</p>
+        <p class="testimonial__text">Katharina hat mir gezeigt, dass Finanzen nicht kompliziert sein müssen. In 3 Monaten habe ich meine AHV-Lücke um CHF 80'000 geschlossen und meine Steuern optimiert. Absolute Empfehlung!</p>
         <div class="testimonial__author">
-          <div class="testimonial__avatar">👩</div>
-          <div><div class="testimonial__name">Anna L.</div><div class="testimonial__meta">Mama von Felix · Zürich</div></div>
+          <div class="testimonial__avatar">👩‍⚕️</div>
+          <div><div class="testimonial__name">Dr. med. Sarah M.</div><div class="testimonial__meta">Internistin, Zürich</div></div>
         </div>
       </div>
       <div class="testimonial" data-reveal data-delay="100">
         <div class="testimonial__stars">★★★★★</div>
-        <p class="testimonial__text">Der Online-Kurs war perfekt für meinen chaotischen Alltag. Ich konnte alles schauen, wenn das Baby schlief. Die Videos sind klar, verständlich und umsetzbar. Absolute Empfehlung!</p>
+        <p class="testimonial__text">Endlich jemand, der ärztliche Finanzprobleme versteht! Die Anlageberatung ist konkret und umzusetzen. Ich fühle mich jetzt kontrollierend statt ängstlich.</p>
         <div class="testimonial__author">
-          <div class="testimonial__avatar">👩‍🦱</div>
-          <div><div class="testimonial__name">Clara M.</div><div class="testimonial__meta">Mama von Sophie · Bern</div></div>
+          <div class="testimonial__avatar">👩‍⚕️</div>
+          <div><div class="testimonial__name">Julia B.</div><div class="testimonial__meta">Zahnhärztin, Bern</div></div>
         </div>
       </div>
       <div class="testimonial" data-reveal data-delay="200">
         <div class="testimonial__stars">★★★★★</div>
-        <p class="testimonial__text">Was mich am meisten überrascht hat: Lisa antwortet wirklich auf WhatsApp. Ich fühlte mich nie allein. Das 1:1 Coaching war das Beste, was ich für mich getan habe.</p>
+        <p class="testimonial__text">Katharina antwortet wirklich auf meine Fragen. Ihr Modul "Selbstständige Steuern" hat mir allein CHF 25'000 gespart. Das beste Geld, das ich je investiert habe.</p>
         <div class="testimonial__author">
-          <div class="testimonial__avatar">👩‍🦰</div>
-          <div><div class="testimonial__name">Sandra K.</div><div class="testimonial__meta">Mama von Tom · Basel</div></div>
+          <div class="testimonial__avatar">👩‍💼</div>
+          <div><div class="testimonial__name">Mia K.</div><div class="testimonial__meta">Freelance Consultant, Basel</div></div>
         </div>
       </div>
     </div>
@@ -272,24 +401,28 @@
     </div>
     <div class="faq">
       <div class="faq-item">
-        <div class="faq-q">Bin ich bereit für das Coaching, wenn mein Baby erst 6 Wochen alt ist?</div>
-        <div class="faq-a">Grundsätzlich empfehle ich, mit dem aktiven Coaching frühestens nach dem Wochenbett (6–8 Wochen nach der Geburt) zu beginnen. Das Erstgespräch kann aber jederzeit stattfinden. Bei medizinischen Fragen arbeitest du immer in Absprache mit deiner Ärztin.</div>
+        <div class="faq-q">Für wen ist Finanzcoaching sinnvoll?</div>
+        <div class="faq-a">Finanzcoaching ist ideal für Ärzte,  Selbstständige, Fachpersonen und alle, die ihre finanzielle Situation verstehen und aktiv verbessern möchten. Egal ob Du gerade anfängst oder bereits investierst — ich begleite Dich.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Was unterscheidet mein Finanzcoaching von anderen Finanzberatern?</div>
+        <div class="faq-a">Als Ärztin mit MBA verstehe ich die spezifischen Herausforderungen von Healthcare-Professionellen. Ich bin nicht an Produktverkäufe gebunden und fokussiere auf nachhaltige, praktische Strategien, nicht auf Finanzprodukte.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">Kann ich das Coaching auch auf Französisch machen?</div>
-        <div class="faq-a">Ja! Ich bin zweisprachig und biete alle Leistungen sowohl auf Deutsch als auch auf Französisch an. Das ist besonders für Mamas in der Romandie oder in zweisprachigen Kantonen praktisch.</div>
+        <div class="faq-a">Ja! Ich bin zweisprachig und biete alle Leistungen auf Deutsch und Französisch an.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Ich stille noch — ist Abnehmen trotzdem möglich?</div>
-        <div class="faq-a">Absolut. Stillen erhöht den Kalorienbedarf, was sich positiv auf die Gewichtsabnahme auswirken kann. Ich passe deinen Ernährungsplan an die Stillzeit an — dein Baby und du bekommt alles, was ihr braucht.</div>
+        <div class="faq-q">Wie viel Zeit brauche ich pro Woche?</div>
+        <div class="faq-a">Im 1:1 Coaching sind es ca. 2–3 Stunden pro Woche — ein Video-Call (60 Min.) und Eigenarbeit. Die Module sind flexibler. Beides passt in einen vollen Berufsleben.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Wie viel Zeit brauche ich pro Tag für das Programm?</div>
-        <div class="faq-a">Ich plane realistisch. Die Workouts dauern 15–20 Minuten. Die Mahlzeiten sind so konzipiert, dass sie sich schnell zubereiten lassen — auch mit einem Baby auf dem Arm. Ich weiß, wie wenig Zeit Mamas haben.</div>
+        <div class="faq-q">Was passiert nach den 12 Wochen Coaching?</div>
+        <div class="faq-a">Du hast einen klaren Finanzplan und alle Werkzeuge, um diesen selbstständig umzusetzen. Viele Klientinnen arbeiten mit mir weiter im "Maintenance-Modus" (monatl. Check-ins). Aber die meisten sind nach 12 Wochen unabhängig.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Was passiert nach den 8 Wochen Coaching?</div>
-        <div class="faq-a">Du hast alle Werkzeuge, um eigenständig weiterzumachen. Ich biete auch eine "Maintenance"-Option an (monatliche Check-ins) für alle, die weiter begleitet werden möchten. Aber die meisten meiner Klientinnen sind nach 8 Wochen selbstständig.</div>
+        <div class="faq-q">Benötige ich bereits Finanzwissen?</div>
+        <div class="faq-a">Nein! Das ist sogar oft besser — wenn Du mit Angst vor Finanzen startest, lernst Du strukturiert die Basics. Ich erkläre alles verständlich und FINMA-konform.</div>
       </div>
     </div>
   </div>
@@ -302,7 +435,7 @@
       <span class="label">Bereit loszulegen?</span>
       <h2>Starte mit einem<br><em>kostenlosen Gespräch</em></h2>
       <p>30 Minuten. Kein Verkaufsdruck. Ich bin einfach für dich da.</p>
-      <a href="kontakt.html" class="btn btn--primary" style="font-size:15px;padding:16px 36px;">Erstgespräch buchen →</a>
+      <a href="kontakt.html" class="btn btn--primary" style="font-size:15px;padding:16px 36px;">Finanzgespr äch buchen →</a>
       <p class="optin-note">Auf Deutsch oder Français · Via Zoom · Kostenlos</p>
     </div>
   </div>
@@ -312,9 +445,9 @@
   <div class="container">
     <div class="footer__grid">
       <div class="footer__brand">
-        <a href="index.html" class="nav__logo">Mama<span style="color:var(--terra)">Figur</span></a>
-        <p>Begleitung für junge Mamas in der Schweiz.</p>
-        <div class="footer__social"><a href="#">📸</a><a href="#">📌</a><a href="#">📘</a></div>
+        <a href="index.html" class="nav__logo">Finanz<span style="color:var(--terra)">Schweiz</span></a>
+        <p>Begleitung für Schweizer Professionelle auf ihrem Weg zu finanzieller Unabhängigkeit.</p>
+        <div class="footer__social"><a href="#">🔗</a><a href="#">📧</a></div>
       </div>
       <div class="footer__col"><h4>Navigation</h4><ul>
         <li><a href="index.html">Home</a></li>
@@ -324,9 +457,9 @@
         <li><a href="kontakt.html">Kontakt</a></li>
       </ul></div>
       <div class="footer__col"><h4>Angebote</h4><ul>
-        <li><a href="#preise">Erstgespräch (gratis)</a></li>
-        <li><a href="#preise">1:1 Coaching</a></li>
-        <li><a href="#preise">Online Kurs</a></li>
+        <li><a href="#preise">Finanz-Erstgespräch (gratis)</a></li>
+        <li><a href="#preise">1:1 Finanzcoaching</a></li>
+        <li><a href="#preise">Spezial-Module</a></li>
       </ul></div>
       <div class="footer__col"><h4>Rechtliches</h4><ul>
         <li><a href="kontakt.html">Impressum</a></li>
@@ -334,8 +467,8 @@
         <li><a href="kontakt.html">AGB</a></li>
       </ul></div>
     </div>
-    <div class="footer__bottom"><span>© 2025 MamaFigur.ch</span><span>Made with 💚 in der Schweiz</span></div>
-    <p class="footer__disclaimer">Hinweis: Die Inhalte dieser Website ersetzen keine medizinische Beratung. Bei gesundheitlichen Fragen wende dich an deine Ärztin.</p>
+    <div class="footer__bottom"><span>© 2025 FinanzSchweiz.ch</span><span>Made with 🇨🇭 in der Schweiz</span></div>
+    <p class="footer__disclaimer">Hinweis: Finanzcoaching ersetzt keine professionelle Finanzberatung. Konsultieren Sie einen FINMA-regulierten Berater.</p>
   </div>
 </footer>
 

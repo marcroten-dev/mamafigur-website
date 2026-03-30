@@ -39,8 +39,9 @@ em{font-style:italic}
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 36px;transition:var(--tr)}
 .nav.scrolled{background:rgba(250,247,242,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);box-shadow:var(--sh-sm)}
 .nav-inner{max-width:1100px;margin:0 auto;height:72px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:var(--fd);font-size:26px;font-weight:400;letter-spacing:.5px;color:var(--coal)}
+.logo{font-family:var(--fd);font-size:26px;font-weight:400;letter-spacing:.5px;color:#fff}
 .logo span{color:var(--terra)}
+.nav.scrolled .logo{color:var(--coal)}
 .nav-links{display:flex;gap:32px;align-items:center}
 .nav-links a{font-size:13px;font-weight:500;color:var(--mid);transition:color var(--tr)}
 .nav-links a:hover,.nav-links a.active{color:var(--coal)}

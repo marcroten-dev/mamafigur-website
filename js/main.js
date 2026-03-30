@@ -1,4 +1,4 @@
-/* MamaFigur.ch — Main JS */
+/* FinanzSchweiz.ch — Main JS */
 document.addEventListener('DOMContentLoaded', () => {
 
   // NAV SCROLL
@@ -56,3 +56,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
