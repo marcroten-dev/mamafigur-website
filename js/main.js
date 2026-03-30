@@ -1,145 +1,58 @@
-/* MamaFigur.ch — Main JavaScript */
+/* MamaFigur.ch — Main JS */
+document.addEventListener('DOMContentLoaded', () => {
 
-document.addEventListener('DOMContentLoaded', function () {
-
-  // ── NAVIGATION SCROLL ──
+  // NAV SCROLL
   const nav = document.querySelector('.nav');
-  if (nav) {
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 40);
-    });
-  }
+  if (nav) window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
 
-  // ── MOBILE MENU ──
-  const hamburger = document.querySelector('.nav__hamburger');
-  const mobileMenu = document.querySelector('.mobile-menu');
-  const mobileClose = document.querySelector('.mobile-menu__close');
+  // MOBILE MENU
+  const burger = document.querySelector('.nav-hamburger');
+  const mMenu = document.querySelector('.mobile-menu');
+  const mClose = document.querySelector('.mobile-menu-close');
+  if (burger && mMenu) burger.addEventListener('click', () => { mMenu.classList.add('open'); document.body.style.overflow = 'hidden'; });
+  if (mClose) mClose.addEventListener('click', () => { mMenu.classList.remove('open'); document.body.style.overflow = ''; });
+  if (mMenu) mMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { mMenu.classList.remove('open'); document.body.style.overflow = ''; }));
 
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', () => {
-      mobileMenu.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    });
-  }
-  if (mobileClose && mobileMenu) {
-    mobileClose.addEventListener('click', () => {
-      mobileMenu.classList.remove('open');
-      document.body.style.overflow = '';
-    });
-  }
-  if (mobileMenu) {
-    mobileMenu.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-        document.body.style.overflow = '';
-      });
-    });
-  }
-
-  // ── SCROLL REVEAL ──
-  const revealEls = document.querySelectorAll('[data-reveal]');
-  if (revealEls.length) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const delay = entry.target.dataset.delay || 0;
-          setTimeout(() => {
-            entry.target.classList.add('revealed');
-          }, parseInt(delay));
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    revealEls.forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(28px)';
-      el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
-      observer.observe(el);
-    });
-    document.addEventListener('animationstart', () => {}, false);
-    // Apply revealed state
-    document.querySelectorAll('[data-reveal].revealed').forEach(el => {
-      el.style.opacity = '1';
-      el.style.transform = 'translateY(0)';
-    });
-  }
-
-  // Observer callback update
+  // SCROLL REVEAL
   const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const delay = parseInt(entry.target.dataset.delay || 0);
-        setTimeout(() => {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }, delay);
-        io.unobserve(entry.target);
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const delay = parseInt(e.target.dataset.delay || 0);
+        setTimeout(() => e.target.classList.add('visible'), delay);
+        io.unobserve(e.target);
       }
     });
   }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
 
-  revealEls.forEach(el => io.observe(el));
-
-  // ── EMAIL FORM ──
-  const forms = document.querySelectorAll('.optin-form, .contact-form');
-  forms.forEach(form => {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const btn = form.querySelector('button[type="submit"], .btn');
-      if (btn) {
-        const original = btn.textContent;
-        btn.textContent = '✓ Merci !';
-        btn.style.background = '#546048';
-        setTimeout(() => {
-          btn.textContent = original;
-          btn.style.background = '';
-        }, 3000);
-      }
-      form.reset();
-    });
+  // ACTIVE NAV
+  const page = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(a => {
+    if ((a.getAttribute('href') || '').includes(page)) a.classList.add('active');
   });
 
-  // ── ACTIVE NAV LINK ──
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav__links a, .mobile-menu a').forEach(a => {
-    const href = a.getAttribute('href');
-    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
-      a.classList.add('active');
-    }
-  });
-
-  // ── COUNTER ANIMATION ──
-  const counters = document.querySelectorAll('[data-count]');
-  if (counters.length) {
-    const countObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          const target = parseInt(el.dataset.count);
-          const suffix = el.dataset.suffix || '';
-          let current = 0;
-          const step = Math.ceil(target / 50);
-          const timer = setInterval(() => {
-            current = Math.min(current + step, target);
-            el.textContent = current + suffix;
-            if (current >= target) clearInterval(timer);
-          }, 30);
-          countObserver.unobserve(el);
-        }
-      });
-    }, { threshold: 0.5 });
-    counters.forEach(el => countObserver.observe(el));
-  }
-
-  // ── SMOOTH SCROLL FOR ANCHORS ──
+  // SMOOTH SCROLL
   document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', function (e) {
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+    a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
     });
   });
 
+  // FAQ
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => q.closest('.faq-item').classList.toggle('open'));
+  });
+
+  // BLOG FILTER
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const cat = btn.dataset.cat;
+      document.querySelectorAll('.art-card').forEach(card => {
+        card.style.display = (cat === 'all' || card.dataset.cat === cat) ? 'flex' : 'none';
+      });
+    });
+  });
 });

@@ -1,323 +1,228 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MamaFigur.ch — Gesund abnehmen vor, während & nach der Schwangerschaft</title>
-  <meta name="description" content="Wie ich vor, während und nach der Schwangerschaft abgenommen habe – und wie ich andere Mamas dabei begleite. Coaching & Onlinekurse für junge Mamas in der Schweiz." />
-  <meta name="keywords" content="abnehmen schwangerschaft, nach geburt abnehmen, postpartum coaching, mama abnehmen schweiz, MamaFigur" />
-  <meta property="og:title" content="MamaFigur.ch — Deine Begleiterin für Gewichtsverlust rund um die Schwangerschaft" />
-  <meta property="og:description" content="Meine persönliche Geschichte: Von Körpergefühl bis Selfcare – vor, während & nach der Schwangerschaft." />
-  <meta property="og:type" content="website" />
-  <link rel="canonical" href="https://mamafigur.ch/" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>MamaFigur.ch — Gesund abnehmen vor, während & nach der Schwangerschaft</title>
+<meta name="description" content="Wie ich vor, während und nach der Schwangerschaft abgenommen habe – und wie ich andere Mamas dabei begleite. Coaching & Onlinekurse in der Schweiz."/>
+<meta name="keywords" content="abnehmen schwangerschaft, nach geburt abnehmen, postpartum coaching, mama abnehmen schweiz"/>
+<link rel="canonical" href="https://mamafigur.ch/"/>
+<link rel="stylesheet" href="css/style.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<style>
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:100vh}
+.hero-left{background:var(--coal);display:flex;flex-direction:column;justify-content:flex-end;padding:80px 64px;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 30% 65%,rgba(196,113,79,.18),transparent 60%),radial-gradient(ellipse at 80% 20%,rgba(139,158,126,.12),transparent 50%)}
+.hero-left-content{position:relative;z-index:2}
+.pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:6px 14px;border-radius:20px;margin-bottom:28px}
+.pill-dot{width:6px;height:6px;border-radius:50%;background:var(--terra-l);animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
+.pill span:last-child{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.6);font-weight:500}
+.hero-title{font-family:var(--fd);font-size:clamp(52px,5.5vw,82px);font-weight:300;color:#fff;line-height:1.0;margin-bottom:18px}
+.hero-title em{color:var(--terra-l);font-style:italic}
+.hero-sub{font-size:15.5px;color:rgba(255,255,255,.55);font-weight:300;line-height:1.75;margin-bottom:36px;max-width:420px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.scroll-hint{position:absolute;bottom:32px;right:40px;z-index:2;display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.3);font-size:10px;letter-spacing:2px;text-transform:uppercase}
+.scroll-line{width:36px;height:1px;background:rgba(255,255,255,.2);position:relative;overflow:hidden}
+.scroll-line::after{content:'';position:absolute;left:-100%;top:0;width:100%;height:100%;background:var(--terra-l);animation:sl 2s infinite}
+@keyframes sl{to{left:100%}}
+.hero-right{background:var(--sand);padding:100px 60px 80px;display:flex;flex-direction:column;justify-content:center;position:relative}
+.hero-right::before{content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(196,113,79,.12),transparent 70%)}
+.phases{display:flex;flex-direction:column;gap:14px;margin-bottom:32px}
+.phase{display:flex;gap:16px;align-items:flex-start;padding:18px 20px;background:#fff;border-radius:14px;border:1px solid var(--border);transition:var(--tr);cursor:default}
+.phase:hover{box-shadow:var(--sh-md);transform:translateX(4px)}
+.phase-icon{width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0}
+.p1 .phase-icon{background:#FFF0EB}.p2 .phase-icon{background:#EFF5EB}.p3 .phase-icon{background:#F5F0EB}
+.phase-lbl{font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:var(--terra);font-weight:600;margin-bottom:2px}
+.phase-name{font-family:var(--fd);font-size:18px;font-weight:500;margin-bottom:2px}
+.phase-desc{font-size:12.5px;color:var(--mid);font-weight:300}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.hero-stat{background:#fff;border-radius:12px;padding:14px;text-align:center;border:1px solid var(--border)}
+.hero-stat-n{font-family:var(--fd);font-size:30px;font-weight:600;color:var(--terra);line-height:1}
+.hero-stat-l{font-size:11px;color:var(--mid);margin-top:3px}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.story-img-wrap{position:relative}
+.story-img{width:100%;aspect-ratio:3/4;background:linear-gradient(145deg,var(--sand),var(--sand-d));border-radius:32px;display:flex;align-items:center;justify-content:center;font-size:80px}
+.story-badge{position:absolute;bottom:-18px;right:-18px;background:#fff;border-radius:14px;padding:18px 22px;box-shadow:var(--sh-lg);border:1px solid var(--border)}
+.badge-n{font-family:var(--fd);font-size:38px;font-weight:600;color:var(--terra);line-height:1}
+.badge-t{font-size:11.5px;color:var(--mid);margin-top:2px}
+.story-accent{position:absolute;top:-14px;left:-14px;width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,var(--sage-l),var(--sage));opacity:.25;z-index:-1}
+.story-content p{font-size:15px;color:var(--mid);font-weight:300;line-height:1.75;margin-bottom:16px}
+.story-quote{border-left:3px solid var(--terra-l);padding-left:18px;margin:24px 0}
+.story-quote p{font-family:var(--fd);font-size:21px;font-style:italic;color:var(--coal);font-weight:300;line-height:1.4}
+.blog-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:18px}
+.blog-card{background:#fff;border-radius:20px;overflow:hidden;border:1px solid var(--border);transition:var(--tr);display:flex;flex-direction:column}
+.blog-card:hover{box-shadow:var(--sh-lg);transform:translateY(-3px)}
+.blog-feat{grid-row:span 2}
+.blog-img{aspect-ratio:16/10;background:var(--sand);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:54px}
+.blog-feat .blog-img{aspect-ratio:4/3}
+.blog-cat{position:absolute;top:12px;left:12px;background:#fff;padding:3px 11px;border-radius:20px;font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--terra)}
+.blog-body{padding:22px;flex:1;display:flex;flex-direction:column}
+.blog-feat .blog-body{padding:28px}
+.blog-date{font-size:11px;color:var(--lt);margin-bottom:8px}
+.blog-card h3{font-family:var(--fd);font-size:19px;font-weight:500;line-height:1.25;flex:1;margin-bottom:10px}
+.blog-feat h3{font-size:26px}
+.blog-card .excerpt{font-size:13px;color:var(--mid);line-height:1.6;font-weight:300}
+.read-more{font-size:12px;font-weight:600;color:var(--terra);margin-top:14px;display:inline-flex;align-items:center;gap:4px;transition:gap var(--tr)}
+.read-more:hover{gap:8px}
+.read-more::after{content:'→'}
+.insta-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:3px;border-radius:14px;overflow:hidden}
+.insta-item{aspect-ratio:1;background:var(--sand);display:flex;align-items:center;justify-content:center;font-size:28px;position:relative;overflow:hidden;cursor:pointer}
+.insta-ov{position:absolute;inset:0;background:rgba(30,30,30,.6);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .2s;font-size:20px}
+.insta-item:hover .insta-ov{opacity:1}
+@media(max-width:960px){.hero{grid-template-columns:1fr;min-height:auto}.hero-left{min-height:55vh;padding:90px 28px 52px}.hero-right{padding:48px 28px}.blog-grid{grid-template-columns:1fr}.blog-feat{grid-row:auto}.story-grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
-
-<!-- ══ NAVIGATION ══ -->
-<nav class="nav" id="nav">
-  <div class="nav__inner">
-    <a href="index.html" class="nav__logo">Mama<span>Figur</span></a>
-    <ul class="nav__links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="meine-geschichte.html">Meine Geschichte</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="coaching.html">Coaching</a></li>
-      <li><a href="kontakt.html">Kontakt</a></li>
-    </ul>
-    <a href="coaching.html" class="btn btn--primary nav__cta">Gratis Erstgespräch</a>
-    <button class="nav__hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-
-<!-- MOBILE MENU -->
-<div class="mobile-menu">
-  <button class="mobile-menu__close">✕</button>
-  <a href="index.html">Home</a>
-  <a href="meine-geschichte.html">Meine Geschichte</a>
-  <a href="blog.html">Blog</a>
-  <a href="coaching.html">Coaching</a>
-  <a href="kontakt.html">Kontakt</a>
+<nav class="nav"><div class="nav-inner">
+  <a href="index.html" class="logo">Mama<span>Figur</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="meine-geschichte.html">Meine Geschichte</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="coaching.html">Coaching</a></li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+  </ul>
+  <a href="kontakt.html" class="btn btn--primary">Gratis Erstgespräch</a>
+  <button class="nav-hamburger"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu"><button class="mobile-menu-close">✕</button>
+  <a href="index.html">Home</a><a href="meine-geschichte.html">Meine Geschichte</a>
+  <a href="blog.html">Blog</a><a href="coaching.html">Coaching</a><a href="kontakt.html">Kontakt</a>
 </div>
 
-<!-- ══ HERO ══ -->
+<!-- HERO -->
 <section class="hero">
-  <div class="hero__left">
-    <div class="hero__left-content fade-up">
-      <div class="hero__tag">
-        <span class="hero__tag-dot"></span>
-        <span>Coaching verfügbar</span>
-      </div>
-      <h1 class="hero__title">
-        Schlank &<br><em>stark</em> —<br>als Mama.
-      </h1>
-      <p class="hero__subtitle">
-        Ich habe vor, während und nach meiner Schwangerschaft Gewicht verloren — mit Ernährungsplan, Bewegung und viel Liebe zu mir selbst. Heute begleite ich andere Mamas auf diesem Weg.
-      </p>
-      <div class="hero__actions">
+  <div class="hero-left">
+    <div class="hero-bg"></div>
+    <div class="hero-left-content">
+      <div class="pill"><span class="pill-dot"></span><span>Coaching verfügbar</span></div>
+      <h1 class="hero-title">Schlank &<br><em>stark —</em><br>als Mama.</h1>
+      <p class="hero-sub">Ich habe vor, während und nach meiner Schwangerschaft Gewicht verloren — mit Ernährungsplan, Bewegung und viel Liebe zu mir selbst. Heute begleite ich andere Mamas auf diesem Weg.</p>
+      <div class="hero-btns">
         <a href="meine-geschichte.html" class="btn btn--primary">Meine Geschichte lesen</a>
-        <a href="coaching.html" class="btn btn--outline-white">Coaching entdecken</a>
+        <a href="coaching.html" class="btn btn--ghost">Coaching entdecken</a>
       </div>
     </div>
-    <div class="hero__scroll">
-      <div class="hero__scroll-line"></div>
-      <span>Scroll</span>
-    </div>
+    <div class="scroll-hint"><div class="scroll-line"></div><span>Scroll</span></div>
   </div>
-
-  <div class="hero__right">
-    <div class="hero__phases" data-reveal>
-      <div class="phase">
-        <div class="phase__icon">🤰</div>
-        <div>
-          <div class="phase__label">Phase 1</div>
-          <div class="phase__title">Vor der Schwangerschaft</div>
-          <div class="phase__desc">Bewusste Ernährung & Körpervorbereitung für die beste Grundlage.</div>
-        </div>
-      </div>
-      <div class="phase">
-        <div class="phase__icon">💚</div>
-        <div>
-          <div class="phase__label">Phase 2</div>
-          <div class="phase__title">Während der Schwangerschaft</div>
-          <div class="phase__desc">Gesunde Gewichtskontrolle — sanft, sicher, nachhaltig.</div>
-        </div>
-      </div>
-      <div class="phase">
-        <div class="phase__icon">👶</div>
-        <div>
-          <div class="phase__label">Phase 3</div>
-          <div class="phase__title">Nach der Geburt</div>
-          <div class="phase__desc">Zurück zu sich selbst — mit Energie, Wohlbefinden & Stolz.</div>
-        </div>
-      </div>
+  <div class="hero-right">
+    <div class="phases" data-reveal>
+      <div class="phase p1"><div class="phase-icon">🤰</div><div><div class="phase-lbl">Phase 1</div><div class="phase-name">Vor der Schwangerschaft</div><div class="phase-desc">Bewusste Ernährung & Körpervorbereitung</div></div></div>
+      <div class="phase p2"><div class="phase-icon">💚</div><div><div class="phase-lbl">Phase 2</div><div class="phase-name">Während der Schwangerschaft</div><div class="phase-desc">Gesunde Gewichtskontrolle — sanft & sicher</div></div></div>
+      <div class="phase p3"><div class="phase-icon">👶</div><div><div class="phase-lbl">Phase 3</div><div class="phase-name">Nach der Geburt</div><div class="phase-desc">Zurück zu sich selbst — mit Energie & Stolz</div></div></div>
     </div>
-    <div class="hero__stats">
-      <div class="hero__stat">
-        <div class="hero__stat-num" data-count="3" data-suffix="">3</div>
-        <div class="hero__stat-label">Phasen begleitet</div>
-      </div>
-      <div class="hero__stat">
-        <div class="hero__stat-num" data-count="50" data-suffix="+">50+</div>
-        <div class="hero__stat-label">Mamas begleitet</div>
-      </div>
-      <div class="hero__stat">
-        <div class="hero__stat-num" data-count="100" data-suffix="%">100%</div>
-        <div class="hero__stat-label">Persönliche Methode</div>
-      </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-n">3</div><div class="hero-stat-l">Phasen begleitet</div></div>
+      <div class="hero-stat"><div class="hero-stat-n">50+</div><div class="hero-stat-l">Mamas begleitet</div></div>
+      <div class="hero-stat"><div class="hero-stat-n">100%</div><div class="hero-stat-l">Pers. Methode</div></div>
     </div>
   </div>
 </section>
 
-<!-- ══ TRUST BAR ══ -->
+<!-- TRUST -->
 <div class="trust-bar">
-  <div class="trust-item"><span>🇨🇭</span><span>Basiert in der Schweiz</span></div>
-  <div class="trust-item"><span>🎓</span><span>Ausgebildete Ernährungsberaterin</span></div>
-  <div class="trust-item"><span>💬</span><span>Deutsch & Französisch</span></div>
-  <div class="trust-item"><span>🤱</span><span>Mama aus Erfahrung</span></div>
-  <div class="trust-item"><span>✨</span><span>Individuelle Begleitung</span></div>
+  <div class="trust-item"><span>🇨🇭</span> Basiert in der Schweiz</div>
+  <div class="trust-item"><span>🎓</span> Ausgebildete Ernährungsberaterin</div>
+  <div class="trust-item"><span>💬</span> Deutsch & Français</div>
+  <div class="trust-item"><span>🤱</span> Mama aus Erfahrung</div>
+  <div class="trust-item"><span>✨</span> Individuelle Begleitung</div>
 </div>
 
-<!-- ══ STORY TEASER ══ -->
+<!-- STORY TEASER -->
 <section class="section">
   <div class="container">
     <div class="story-grid">
-      <div class="story-image" data-reveal>
-        <div class="story-image__accent"></div>
-        <div class="story-image__main">
-          <div class="img-placeholder">🌿</div>
-        </div>
-        <div class="story-image__badge">
-          <div class="story-image__badge-num">3</div>
-          <div class="story-image__badge-text">Phasen · Eine Geschichte</div>
-        </div>
+      <div class="story-img-wrap" data-reveal>
+        <div class="story-accent"></div>
+        <div class="story-img">🌿</div>
+        <div class="story-badge"><div class="badge-n">3</div><div class="badge-t">Phasen · Eine Geschichte</div></div>
       </div>
       <div class="story-content" data-reveal data-delay="150">
-        <span class="label">Meine Geschichte</span>
-        <h2>Ich bin der Beweis,<br><em>dass es möglich ist.</em></h2>
+        <span class="lbl" style="margin-bottom:12px">Meine Geschichte</span>
+        <h2 style="margin-bottom:18px">Ich bin der Beweis,<br><em>dass es möglich ist.</em></h2>
         <p>Als ich schwanger wurde, hatte ich viele Fragen — und noch mehr Unsicherheiten. Darf ich abnehmen? Wie ernähre ich mich richtig? Was passiert nach der Geburt mit meinem Körper?</p>
         <p>Heute, nach drei intensiven Phasen der Transformation, teile ich alles, was wirklich funktioniert hat — ehrlich, wissenschaftlich fundiert und aus dem echten Leben.</p>
-        <div class="story-quote">
-          <p>"Ich wollte nicht nur schlank sein — ich wollte mich stark, gesund und als Mutter vollständig fühlen."</p>
-        </div>
+        <div class="story-quote"><p>"Ich wollte nicht nur schlank sein — ich wollte mich stark, gesund und als Mutter vollständig fühlen."</p></div>
         <a href="meine-geschichte.html" class="btn btn--primary">Ganze Geschichte lesen</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ SERVICES ══ -->
-<section class="section section--alt" id="coaching">
+<!-- SERVICES -->
+<section class="section section--alt">
   <div class="container">
-    <div class="services-header">
-      <div>
-        <span class="label">Angebote</span>
-        <h2 class="section-title" style="margin-top:12px">Wie ich dich<br><em>begleiten kann</em></h2>
-      </div>
-      <p class="section-subtitle">Von der individuellen 1:1-Begleitung bis zum flexiblen Onlinekurs — für jede Lebenssituation.</p>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:52px;flex-wrap:wrap;gap:20px">
+      <div><span class="lbl" style="margin-bottom:12px">Angebote</span><h2>Wie ich dich<br><em>begleiten kann</em></h2></div>
+      <p style="font-size:14.5px;color:var(--mid);font-weight:300;max-width:320px;line-height:1.65">Von der 1:1-Begleitung bis zum flexiblen Onlinekurs.</p>
     </div>
     <div class="services-grid">
-      <div class="service-card" data-reveal>
-        <div class="service-icon">📋</div>
-        <h3>Gratis<br>Erstgespräch</h3>
-        <p>30 Minuten, um deine Situation zu verstehen und zu sehen, ob wir gut zusammenpassen. Unverbindlich & kostenlos.</p>
-        <div class="service-price">
-          <span class="service-price__amount">0</span>
-          <span class="service-price__period">CHF · kostenlos</span>
-        </div>
-        <ul class="service-features">
-          <li class="service-feature">Individuelle Analyse</li>
-          <li class="service-feature">Erste Empfehlungen</li>
-          <li class="service-feature">Kein Verkaufsdruck</li>
-        </ul>
-        <a href="kontakt.html" class="btn btn--outline">Termin buchen</a>
-      </div>
-
-      <div class="service-card service-card--featured" data-reveal data-delay="100">
-        <span class="service-badge">⭐ Beliebt</span>
-        <div class="service-icon">🤝</div>
-        <h3>1:1<br>Coaching</h3>
-        <p>8 Wochen intensive Begleitung. Ernährungsplan, Bewegungsprogramm und wöchentliche Check-ins — individuell auf dich zugeschnitten.</p>
-        <div class="service-price">
-          <span class="service-price__amount">CHF 390</span>
-          <span class="service-price__period">/ Monat</span>
-        </div>
-        <ul class="service-features">
-          <li class="service-feature">Persönlicher Ernährungsplan</li>
-          <li class="service-feature">Wöchentliche Video-Calls</li>
-          <li class="service-feature">WhatsApp-Support</li>
-          <li class="service-feature">Workout-Programm</li>
-          <li class="service-feature">Geld-zurück-Garantie (14 Tage)</li>
-        </ul>
-        <a href="coaching.html" class="btn btn--primary">Jetzt anmelden</a>
-      </div>
-
-      <div class="service-card" data-reveal data-delay="200">
-        <div class="service-icon">💻</div>
-        <h3>Online<br>Kurs</h3>
-        <p>Die komplette Methode in 6 Wochen — auf dein eigenes Tempo. Ideal wenn du flexibel bleiben möchtest.</p>
-        <div class="service-price">
-          <span class="service-price__amount">CHF 247</span>
-          <span class="service-price__period">einmalig</span>
-        </div>
-        <ul class="service-features">
-          <li class="service-feature">6 Module à 4 Videos</li>
-          <li class="service-feature">Rezepte & Einkaufslisten</li>
-          <li class="service-feature">Private Community</li>
-          <li class="service-feature">Lebenslanger Zugang</li>
-        </ul>
-        <a href="coaching.html" class="btn btn--sage">Zum Kurs</a>
-      </div>
+      <div class="svc" data-reveal><div class="svc-icon">📋</div><h3>Gratis Erstgespräch</h3><p>30 Minuten, kein Druck. Ich lerne dich kennen — deine Situation, deine Ziele.</p><div class="svc-price"><span class="svc-price-n">0 CHF</span></div><ul class="svc-feats"><li class="svc-feat">30 Min. via Zoom</li><li class="svc-feat">Individuelle Analyse</li><li class="svc-feat">Kein Verkaufsdruck</li></ul><a href="kontakt.html" class="btn btn--outline">Termin buchen</a></div>
+      <div class="svc svc--dark" data-reveal data-delay="100"><span class="svc-badge">⭐ Beliebt</span><div class="svc-icon">🤝</div><h3>1:1 Coaching</h3><p>8 Wochen intensive Begleitung. Ernährungsplan, Bewegungsprogramm, wöchentliche Check-ins.</p><div class="svc-price"><span class="svc-price-n">CHF 390</span><span class="svc-price-p">/ Monat</span></div><ul class="svc-feats"><li class="svc-feat">Persönlicher Ernährungsplan</li><li class="svc-feat">Wöchentliche Video-Calls</li><li class="svc-feat">WhatsApp-Support</li><li class="svc-feat">Workout-Programm</li><li class="svc-feat">14 Tage Garantie</li></ul><a href="coaching.html" class="btn btn--primary">Jetzt anmelden</a></div>
+      <div class="svc" data-reveal data-delay="200"><div class="svc-icon">💻</div><h3>Online Kurs</h3><p>Die komplette Methode in 6 Wochen — auf dein eigenes Tempo.</p><div class="svc-price"><span class="svc-price-n">CHF 247</span><span class="svc-price-p">einmalig</span></div><ul class="svc-feats"><li class="svc-feat">6 Module à 4 Videos</li><li class="svc-feat">Rezepte & Einkaufslisten</li><li class="svc-feat">Private Community</li><li class="svc-feat">Lebenslanger Zugang</li></ul><a href="coaching.html" class="btn btn--sage">Zum Kurs</a></div>
     </div>
   </div>
 </section>
 
-<!-- ══ BLOG PREVIEW ══ -->
+<!-- BLOG PREVIEW -->
 <section class="section">
   <div class="container">
-    <div class="section-header" style="display:flex;justify-content:space-between;align-items:flex-end;">
-      <div>
-        <span class="label">Blog</span>
-        <h2 class="section-title" style="margin-top:12px">Wissen &<br><em>Inspiration</em></h2>
-      </div>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:44px;flex-wrap:wrap;gap:16px">
+      <div><span class="lbl" style="margin-bottom:12px">Blog</span><h2>Wissen &<br><em>Inspiration</em></h2></div>
       <a href="blog.html" class="btn btn--outline">Alle Artikel</a>
     </div>
     <div class="blog-grid">
-      <div class="blog-card blog-card--featured" data-reveal>
-        <div class="blog-card__image">
-          <div class="img-placeholder" style="font-size:72px">🥗</div>
-          <span class="blog-card__cat">Ernährung</span>
-        </div>
-        <div class="blog-card__body">
-          <div class="blog-card__date">15. März 2025</div>
+      <div class="blog-card blog-feat" data-reveal>
+        <div class="blog-img" style="aspect-ratio:4/3">🥗<span class="blog-cat">Ernährung</span></div>
+        <div class="blog-body">
+          <div class="blog-date">15. März 2025</div>
           <h3>Wie ich während der Schwangerschaft abgenommen habe — meine ehrliche Geschichte</h3>
-          <p>Alle sagten mir, Abnehmen in der Schwangerschaft sei unmöglich — oder gar gefährlich. Ich habe es trotzdem geschafft, und zwar auf gesunde Weise. Hier ist alles, was ich gelernt habe...</p>
-          <a href="blog.html" class="blog-card__link">Weiterlesen</a>
+          <p class="excerpt">Alle sagten mir, es sei unmöglich. Ich habe es trotzdem gemacht — gesund und mit Freude am Essen. Hier ist alles, was wirklich funktioniert hat...</p>
+          <a href="articles/abnehmen-schwangerschaft.html" class="read-more">Weiterlesen</a>
         </div>
       </div>
       <div class="blog-card" data-reveal data-delay="100">
-        <div class="blog-card__image" style="aspect-ratio:16/9">
-          <div class="img-placeholder" style="font-size:48px">💪</div>
-          <span class="blog-card__cat">Training</span>
-        </div>
-        <div class="blog-card__body">
-          <div class="blog-card__date">2. März 2025</div>
+        <div class="blog-img">💪<span class="blog-cat">Training</span></div>
+        <div class="blog-body">
+          <div class="blog-date">2. März 2025</div>
           <h3>Sport nach der Geburt: Wann kann ich anfangen?</h3>
-          <a href="blog.html" class="blog-card__link">Weiterlesen</a>
+          <a href="articles/sport-nach-geburt.html" class="read-more">Weiterlesen</a>
         </div>
       </div>
       <div class="blog-card" data-reveal data-delay="200">
-        <div class="blog-card__image" style="aspect-ratio:16/9">
-          <div class="img-placeholder" style="font-size:48px">👶</div>
-          <span class="blog-card__cat">Postpartum</span>
-        </div>
-        <div class="blog-card__body">
-          <div class="blog-card__date">20. Feb. 2025</div>
-          <h3>5 Tipps für Mamas: Abnehmen mit Baby im Alltag</h3>
-          <a href="blog.html" class="blog-card__link">Weiterlesen</a>
+        <div class="blog-img">👶<span class="blog-cat">Postpartum</span></div>
+        <div class="blog-body">
+          <div class="blog-date">20. Feb. 2025</div>
+          <h3>5 Tipps: Abnehmen mit Baby im Alltag</h3>
+          <a href="articles/abnehmen-mit-baby.html" class="read-more">Weiterlesen</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ TESTIMONIALS ══ -->
+<!-- TESTIMONIALS -->
 <section class="section section--sand">
   <div class="container">
-    <div class="section-header text-center">
-      <span class="label">Stimmen</span>
-      <h2 class="section-title" style="margin-top:12px">Was Mamas<br><em>über mich sagen</em></h2>
-    </div>
-    <div class="testimonials-track">
-      <div class="testimonial" data-reveal>
-        <div class="testimonial__stars">★★★★★</div>
-        <p class="testimonial__text">Nach meiner Geburt hatte ich keine Ahnung, wo ich anfangen sollte. Das Coaching mit Lisa hat mir nicht nur einen Plan gegeben — es hat mir mein Selbstbewusstsein zurückgegeben. In 8 Wochen 6 kg weniger!</p>
-        <div class="testimonial__author">
-          <div class="testimonial__avatar">👩</div>
-          <div>
-            <div class="testimonial__name">Sarah M.</div>
-            <div class="testimonial__meta">Mama von Lena, 7 Monate · Zürich</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial" data-reveal data-delay="100">
-        <div class="testimonial__stars">★★★★★</div>
-        <p class="testimonial__text">Endlich jemand, der meinen Alltag mit Baby versteht! Die Rezepte sind schnell, lecker und die Übungen schaffbar mit Kleinkind im Arm. Ich empfehle Lisa jedem weiter.</p>
-        <div class="testimonial__author">
-          <div class="testimonial__avatar">👩‍🦱</div>
-          <div>
-            <div class="testimonial__name">Julia B.</div>
-            <div class="testimonial__meta">Mama von Noah, 4 Monate · Bern</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial" data-reveal data-delay="200">
-        <div class="testimonial__stars">★★★★★</div>
-        <p class="testimonial__text">Ich war skeptisch, ob ein Online-Coaching wirklich funktioniert. Aber Lisa ist immer erreichbar, immer aufmunternd und die Methode ist wissenschaftlich fundiert. Absolute Empfehlung!</p>
-        <div class="testimonial__author">
-          <div class="testimonial__avatar">👩‍🦰</div>
-          <div>
-            <div class="testimonial__name">Mia K.</div>
-            <div class="testimonial__meta">Mama von Ella, 11 Monate · Basel</div>
-          </div>
-        </div>
-      </div>
+    <div class="section-hd centered"><span class="lbl">Stimmen</span><h2 style="margin-top:10px">Was Mamas<br><em>über mich sagen</em></h2></div>
+    <div class="testi-grid">
+      <div class="testi" data-reveal><div class="testi-stars">★★★★★</div><p class="testi-text">In 8 Wochen 7 kg verloren — mit einem 4 Monate alten Baby. Ich hätte es nie gedacht. Lisa hat mir gezeigt, dass es nicht um Perfektion geht, sondern um Kontinuität.</p><div class="testi-author"><div class="testi-avatar">👩</div><div><div class="testi-name">Sarah M.</div><div class="testi-meta">Mama von Lena, 7 Mon. · Zürich</div></div></div></div>
+      <div class="testi" data-reveal data-delay="100"><div class="testi-stars">★★★★★</div><p class="testi-text">Endlich jemand, der meinen Alltag mit Baby versteht! Die Rezepte sind schnell, lecker und die Übungen schaffbar mit Kleinkind im Arm. Absolute Empfehlung!</p><div class="testi-author"><div class="testi-avatar">👩‍🦱</div><div><div class="testi-name">Julia B.</div><div class="testi-meta">Mama von Noah, 4 Mon. · Bern</div></div></div></div>
+      <div class="testi" data-reveal data-delay="200"><div class="testi-stars">★★★★★</div><p class="testi-text">Lisa antwortet wirklich auf WhatsApp. Ich fühlte mich nie allein. Das 1:1 Coaching war das Beste, was ich für mich getan habe nach der Geburt.</p><div class="testi-author"><div class="testi-avatar">👩‍🦰</div><div><div class="testi-name">Mia K.</div><div class="testi-meta">Mama von Ella, 11 Mon. · Basel</div></div></div></div>
     </div>
   </div>
 </section>
 
-<!-- ══ EMAIL OPTIN ══ -->
+<!-- OPTIN -->
 <section class="section">
   <div class="container">
     <div class="optin" data-reveal>
-      <span class="label">Gratis Ressource</span>
+      <span class="lbl">Gratis Ressource</span>
       <h2>Mein 7-Tage Ernährungsplan<br><em>für frische Mamas</em></h2>
-      <p>Kostenlos herunterladen: Wochenplan, Einkaufsliste & 3 schnelle Rezepte — speziell für die ersten Monate nach der Geburt.</p>
-      <form class="optin-form" onsubmit="return false;">
-        <input type="email" placeholder="Deine E-Mail-Adresse" required />
+      <p class="optin-sub">Wochenplan, Einkaufsliste & 3 schnelle Rezepte — kostenlos herunterladen.</p>
+      <form class="optin-form" action="https://formspree.io/f/YOURFORMID" method="POST">
+        <input type="email" name="email" placeholder="Deine E-Mail-Adresse" required/>
+        <input type="hidden" name="_subject" value="Neues Freebie-Abonnement"/>
         <button type="submit" class="btn btn--primary">Jetzt herunterladen →</button>
       </form>
       <p class="optin-note">Kein Spam. Abmeldung jederzeit möglich.</p>
@@ -325,76 +230,30 @@
   </div>
 </section>
 
-<!-- ══ INSTAGRAM ══ -->
+<!-- INSTAGRAM -->
 <section class="section section--alt">
   <div class="container">
-    <div class="section-header text-center" style="margin-bottom:32px;">
-      <span class="label">Instagram</span>
-      <h2 style="margin-top:12px">Folge mir auf<br><em>@mamafigur</em></h2>
-    </div>
+    <div class="section-hd centered" style="margin-bottom:28px"><span class="lbl">Instagram</span><h2 style="margin-top:10px">Folge mir auf<br><em>@mamafigur</em></h2></div>
     <div class="insta-grid">
-      <div class="insta-item"><div class="img-placeholder" style="font-size:32px">🥗</div><div class="insta-item__overlay"><span>❤️</span></div></div>
-      <div class="insta-item"><div class="img-placeholder" style="font-size:32px">🏃‍♀️</div><div class="insta-item__overlay"><span>❤️</span></div></div>
-      <div class="insta-item"><div class="img-placeholder" style="font-size:32px">👶</div><div class="insta-item__overlay"><span>❤️</span></div></div>
-      <div class="insta-item"><div class="img-placeholder" style="font-size:32px">🌿</div><div class="insta-item__overlay"><span>❤️</span></div></div>
-      <div class="insta-item"><div class="img-placeholder" style="font-size:32px">💚</div><div class="insta-item__overlay"><span>❤️</span></div></div>
-      <div class="insta-item"><div class="img-placeholder" style="font-size:32px">✨</div><div class="insta-item__overlay"><span>❤️</span></div></div>
+      <div class="insta-item">🥗<div class="insta-ov">❤️</div></div>
+      <div class="insta-item">🏃‍♀️<div class="insta-ov">❤️</div></div>
+      <div class="insta-item">👶<div class="insta-ov">❤️</div></div>
+      <div class="insta-item">🌿<div class="insta-ov">❤️</div></div>
+      <div class="insta-item">💚<div class="insta-ov">❤️</div></div>
+      <div class="insta-item">✨<div class="insta-ov">❤️</div></div>
     </div>
   </div>
 </section>
 
-<!-- ══ FOOTER ══ -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer__grid">
-      <div class="footer__brand">
-        <a href="index.html" class="nav__logo">Mama<span style="color:var(--terra)">Figur</span></a>
-        <p>Ich begleite junge Mamas in der Schweiz auf ihrem Weg zu mehr Wohlbefinden, Energie und Körpergefühl — vor, während und nach der Schwangerschaft.</p>
-        <div class="footer__social">
-          <a href="#" title="Instagram">📸</a>
-          <a href="#" title="Pinterest">📌</a>
-          <a href="#" title="Facebook">📘</a>
-          <a href="#" title="YouTube">▶️</a>
-        </div>
-      </div>
-      <div class="footer__col">
-        <h4>Navigation</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="meine-geschichte.html">Meine Geschichte</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="coaching.html">Coaching</a></li>
-          <li><a href="kontakt.html">Kontakt</a></li>
-        </ul>
-      </div>
-      <div class="footer__col">
-        <h4>Themen</h4>
-        <ul>
-          <li><a href="blog.html">Schwangerschaft</a></li>
-          <li><a href="blog.html">Nach der Geburt</a></li>
-          <li><a href="blog.html">Ernährung</a></li>
-          <li><a href="blog.html">Training</a></li>
-          <li><a href="blog.html">Rezepte</a></li>
-        </ul>
-      </div>
-      <div class="footer__col">
-        <h4>Rechtliches</h4>
-        <ul>
-          <li><a href="kontakt.html">Impressum</a></li>
-          <li><a href="kontakt.html">Datenschutz</a></li>
-          <li><a href="kontakt.html">AGB</a></li>
-          <li><a href="kontakt.html">Disclaimer</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer__bottom">
-      <span>© 2025 MamaFigur.ch — Alle Rechte vorbehalten</span>
-      <span>Made with 💚 in der Schweiz</span>
-    </div>
-    <p class="footer__disclaimer">Hinweis: Die Inhalte dieser Website ersetzen keine medizinische Beratung. Bei gesundheitlichen Fragen wende dich bitte an deine Ärztin oder deinen Arzt.</p>
+<footer><div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand"><a href="index.html" class="footer-logo">Mama<span>Figur</span></a><p>Ich begleite junge Mamas in der Schweiz auf ihrem Weg zu mehr Wohlbefinden, Energie und Körpergefühl — vor, während und nach der Schwangerschaft.</p><div class="footer-social"><a href="#" title="Instagram">📸</a><a href="#" title="Pinterest">📌</a><a href="#" title="Facebook">📘</a></div></div>
+    <div class="footer-col"><h4>Navigation</h4><ul><li><a href="index.html">Home</a></li><li><a href="meine-geschichte.html">Meine Geschichte</a></li><li><a href="blog.html">Blog</a></li><li><a href="coaching.html">Coaching</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
+    <div class="footer-col"><h4>Themen</h4><ul><li><a href="articles/abnehmen-schwangerschaft.html">Schwangerschaft</a></li><li><a href="articles/nach-geburt-abnehmen.html">Nach der Geburt</a></li><li><a href="articles/ernaehrungsplan.html">Ernährung</a></li><li><a href="articles/sport-nach-geburt.html">Training</a></li><li><a href="articles/abnehmen-mit-baby.html">Tipps & Tricks</a></li></ul></div>
+    <div class="footer-col"><h4>Rechtliches</h4><ul><li><a href="kontakt.html#impressum">Impressum</a></li><li><a href="kontakt.html#datenschutz">Datenschutz</a></li><li><a href="kontakt.html">AGB</a></li></ul></div>
   </div>
-</footer>
-
+  <div class="footer-bottom"><span>© 2025 MamaFigur.ch — Alle Rechte vorbehalten</span><span>Made with 💚 in der Schweiz</span></div>
+  <p class="footer-disc">Hinweis: Die Inhalte dieser Website ersetzen keine medizinische Beratung. Bei gesundheitlichen Fragen wende dich bitte an deine Ärztin oder deinen Arzt.</p>
+</div></footer>
 <script src="js/main.js"></script>
-</body>
-</html>
+</body></html>

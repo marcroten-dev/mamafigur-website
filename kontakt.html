@@ -1,184 +1,230 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kontakt — MamaFigur.ch</title>
-  <meta name="description" content="Nimm Kontakt auf — Gratis Erstgespräch buchen, Fragen stellen oder einfach Hallo sagen. Ich freue mich auf dich!" />
-  <link rel="stylesheet" href="css/style.css" />
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Kontakt & Erstgespräch — MamaFigur.ch</title>
+<meta name="description" content="Schreib mir — Gratis Erstgespräch buchen, Fragen stellen oder einfach Hallo sagen. Ich freue mich auf dich!"/>
+<link rel="stylesheet" href="css/style.css"/>
+<style>
+.contact-grid{display:grid;grid-template-columns:1fr 380px;gap:72px;align-items:start}
+.info-item{background:#fff;border-radius:14px;padding:20px 22px;border:1px solid var(--border);display:flex;gap:16px;align-items:center;margin-bottom:14px;transition:var(--tr)}
+.info-item:hover{box-shadow:var(--sh-sm);transform:translateX(4px)}
+.info-icon{font-size:26px;flex-shrink:0}
+.info-lbl{font-size:10.5px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--mid);margin-bottom:2px}
+.info-val{font-size:14.5px;font-weight:500}
+.form-success{display:none;background:linear-gradient(135deg,var(--sage-d),#3A4C2E);border-radius:20px;padding:40px;text-align:center;color:#fff}
+.form-success h3{font-family:var(--fd);font-size:28px;margin-bottom:10px}
+.form-success p{color:rgba(255,255,255,.7);font-size:15px;font-weight:300}
+.form-success .check{font-size:52px;margin-bottom:16px}
+.faq-item{border-bottom:1px solid var(--border);padding:18px 0}
+.faq-q{font-family:var(--fd);font-size:19px;font-weight:500;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px}
+.faq-q::after{content:'+';font-size:22px;font-weight:300;color:var(--terra);flex-shrink:0;transition:transform .25s}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{display:none;font-size:14px;color:var(--mid);line-height:1.7;font-weight:300;padding-top:12px;max-width:580px}
+.faq-item.open .faq-a{display:block}
+.legal-box{background:var(--warm);border-radius:16px;padding:28px;border:1px solid var(--border);margin-top:20px}
+.legal-box h3{font-family:var(--fd);font-size:18px;font-weight:500;margin-bottom:12px}
+.legal-box p{font-size:12.5px;color:var(--mid);line-height:1.8;font-weight:300}
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
-
-<nav class="nav" id="nav">
-  <div class="nav__inner">
-    <a href="index.html" class="nav__logo">Mama<span>Figur</span></a>
-    <ul class="nav__links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="meine-geschichte.html">Meine Geschichte</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="coaching.html">Coaching</a></li>
-      <li><a href="kontakt.html">Kontakt</a></li>
-    </ul>
-    <a href="kontakt.html" class="btn btn--primary nav__cta">Gratis Erstgespräch</a>
-    <button class="nav__hamburger"><span></span><span></span><span></span></button>
-  </div>
-</nav>
-<div class="mobile-menu">
-  <button class="mobile-menu__close">✕</button>
-  <a href="index.html">Home</a>
-  <a href="meine-geschichte.html">Meine Geschichte</a>
-  <a href="blog.html">Blog</a>
-  <a href="coaching.html">Coaching</a>
-  <a href="kontakt.html">Kontakt</a>
+<nav class="nav"><div class="nav-inner">
+  <a href="index.html" class="logo">Mama<span>Figur</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li><li><a href="meine-geschichte.html">Meine Geschichte</a></li>
+    <li><a href="blog.html">Blog</a></li><li><a href="coaching.html">Coaching</a></li>
+    <li><a href="kontakt.html" class="active">Kontakt</a></li>
+  </ul>
+  <a href="kontakt.html" class="btn btn--primary">Gratis Erstgespräch</a>
+  <button class="nav-hamburger"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu"><button class="mobile-menu-close">✕</button>
+  <a href="index.html">Home</a><a href="meine-geschichte.html">Meine Geschichte</a>
+  <a href="blog.html">Blog</a><a href="coaching.html">Coaching</a><a href="kontakt.html">Kontakt</a>
 </div>
 
 <div class="page-hero">
   <div class="container">
-    <span class="label">Schreib mir</span>
+    <span class="lbl">Schreib mir</span>
     <h1>Lass uns<br><em>reden.</em></h1>
-    <p>Kein Formular-Frust. Ich antworte innerhalb von 48 Stunden — auf Deutsch oder Français.</p>
+    <p class="page-hero-sub">Kein Formular-Frust. Ich antworte innerhalb von 48 Stunden — auf Deutsch oder Français.</p>
   </div>
 </div>
 
 <section class="section">
   <div class="container">
     <div class="contact-grid">
+
       <!-- FORM -->
       <div data-reveal>
-        <span class="label" style="display:block;margin-bottom:20px;">Schreib mir eine Nachricht</span>
-        <form class="contact-form" onsubmit="return false;">
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <span class="lbl" style="margin-bottom:18px">Schreib mir eine Nachricht</span>
+
+        <!-- SUCCESS STATE (shown after submit) -->
+        <div class="form-success" id="form-success">
+          <div class="check">✅</div>
+          <h3>Danke für deine Nachricht!</h3>
+          <p>Ich melde mich innerhalb von 24–48 Stunden bei dir. Ich freue mich darauf, dich kennenzulernen!</p>
+        </div>
+
+        <!-- FORM -->
+        <form id="contact-form" action="https://formspree.io/f/YOURFORMID" method="POST">
+          <input type="hidden" name="_subject" value="Neue Kontaktanfrage MamaFigur.ch"/>
+          <!-- Honeypot anti-spam -->
+          <input type="text" name="_gotcha" style="display:none"/>
+
+          <div class="form-row" style="margin-bottom:0">
             <div class="form-group">
-              <label>Vorname</label>
-              <input type="text" placeholder="Dein Vorname" required />
+              <label for="vorname">Vorname *</label>
+              <input type="text" id="vorname" name="vorname" placeholder="Dein Vorname" required/>
             </div>
             <div class="form-group">
-              <label>Name</label>
-              <input type="text" placeholder="Dein Nachname" />
+              <label for="nachname">Nachname</label>
+              <input type="text" id="nachname" name="nachname" placeholder="Dein Nachname"/>
             </div>
           </div>
           <div class="form-group">
-            <label>E-Mail</label>
-            <input type="email" placeholder="deine@email.ch" required />
+            <label for="email">E-Mail *</label>
+            <input type="email" id="email" name="email" placeholder="deine@email.ch" required/>
           </div>
           <div class="form-group">
-            <label>Ich interessiere mich für...</label>
-            <select>
+            <label for="interesse">Ich interessiere mich für...</label>
+            <select id="interesse" name="interesse">
               <option value="">Bitte auswählen</option>
-              <option>Gratis Erstgespräch</option>
-              <option>1:1 Coaching (8 Wochen)</option>
-              <option>Online Kurs</option>
-              <option>Allgemeine Fragen</option>
-              <option>Kooperation / Medien</option>
+              <option value="erstgespraech">Gratis Erstgespräch (30 Min.)</option>
+              <option value="coaching">1:1 Coaching (8 Wochen)</option>
+              <option value="onlinekurs">Online Kurs</option>
+              <option value="fragen">Allgemeine Fragen</option>
+              <option value="kooperation">Kooperation / Medien</option>
             </select>
           </div>
           <div class="form-group">
-            <label>Wie alt ist dein Baby?</label>
-            <select>
+            <label for="baby">Wie alt ist dein Baby / bist du schwanger?</label>
+            <select id="baby" name="baby_alter">
               <option value="">Bitte auswählen</option>
-              <option>Noch schwanger</option>
-              <option>0–3 Monate</option>
-              <option>3–6 Monate</option>
-              <option>6–12 Monate</option>
-              <option>Über 12 Monate</option>
-              <option>Noch kein Baby / plane Schwangerschaft</option>
+              <option value="schwanger">Ich bin schwanger</option>
+              <option value="0-3">Baby ist 0–3 Monate alt</option>
+              <option value="3-6">Baby ist 3–6 Monate alt</option>
+              <option value="6-12">Baby ist 6–12 Monate alt</option>
+              <option value="12+">Baby ist über 12 Monate alt</option>
+              <option value="planung">Ich plane eine Schwangerschaft</option>
             </select>
           </div>
           <div class="form-group">
-            <label>Deine Nachricht</label>
-            <textarea placeholder="Erzähl mir kurz von dir und deiner Situation — so kann ich dir besser helfen..." required></textarea>
+            <label for="sprache">Bevorzugte Sprache</label>
+            <select id="sprache" name="sprache">
+              <option value="de">Deutsch</option>
+              <option value="fr">Français</option>
+            </select>
           </div>
-          <button type="submit" class="btn btn--primary" style="width:100%;justify-content:center;padding:16px;">Nachricht senden →</button>
-          <p style="font-size:12px;color:var(--light);text-align:center;margin-top:8px;">Ich antworte innerhalb von 24–48 Stunden.</p>
+          <div class="form-group">
+            <label for="nachricht">Deine Nachricht *</label>
+            <textarea id="nachricht" name="nachricht" placeholder="Erzähl mir kurz von dir und deiner Situation — so kann ich dir besser helfen..." required></textarea>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:20px">
+            <input type="checkbox" id="datenschutz" name="datenschutz" required style="margin-top:4px;flex-shrink:0;accent-color:var(--terra)"/>
+            <label for="datenschutz" style="font-size:12.5px;color:var(--mid);font-weight:300;line-height:1.6;cursor:pointer">Ich habe die <a href="#datenschutz" style="color:var(--terra);text-decoration:underline">Datenschutzerklärung</a> gelesen und bin damit einverstanden, dass meine Daten zur Beantwortung meiner Anfrage verwendet werden.</label>
+          </div>
+          <button type="submit" class="btn btn--primary" style="width:100%;justify-content:center;padding:16px;font-size:15px">Nachricht senden →</button>
+          <p style="font-size:11.5px;color:var(--lt);text-align:center;margin-top:10px">Ich antworte innerhalb von 24–48 Stunden.</p>
         </form>
       </div>
 
-      <!-- INFO -->
+      <!-- INFO SIDEBAR -->
       <div data-reveal data-delay="150">
-        <span class="label" style="display:block;margin-bottom:20px;">So erreichst du mich</span>
+        <span class="lbl" style="margin-bottom:18px">So erreichst du mich</span>
 
-        <div style="display:flex;flex-direction:column;gap:16px;margin-bottom:40px;">
-          <div style="background:white;border-radius:16px;padding:22px 24px;border:1px solid var(--border);display:flex;gap:16px;align-items:center;">
-            <div style="font-size:28px;flex-shrink:0;">📧</div>
-            <div>
-              <div style="font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--mid);margin-bottom:3px;">E-Mail</div>
-              <div style="font-size:15px;font-weight:500;">hallo@mamafigur.ch</div>
-            </div>
-          </div>
-          <div style="background:white;border-radius:16px;padding:22px 24px;border:1px solid var(--border);display:flex;gap:16px;align-items:center;">
-            <div style="font-size:28px;flex-shrink:0;">📸</div>
-            <div>
-              <div style="font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--mid);margin-bottom:3px;">Instagram</div>
-              <div style="font-size:15px;font-weight:500;">@mamafigur</div>
-            </div>
-          </div>
-          <div style="background:white;border-radius:16px;padding:22px 24px;border:1px solid var(--border);display:flex;gap:16px;align-items:center;">
-            <div style="font-size:28px;flex-shrink:0;">🇨🇭</div>
-            <div>
-              <div style="font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--mid);margin-bottom:3px;">Standort</div>
-              <div style="font-size:15px;font-weight:500;">Schweiz · Remote verfügbar</div>
-            </div>
-          </div>
-          <div style="background:white;border-radius:16px;padding:22px 24px;border:1px solid var(--border);display:flex;gap:16px;align-items:center;">
-            <div style="font-size:28px;flex-shrink:0;">🗣️</div>
-            <div>
-              <div style="font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--mid);margin-bottom:3px;">Sprachen</div>
-              <div style="font-size:15px;font-weight:500;">Deutsch & Français</div>
-            </div>
-          </div>
-        </div>
+        <div class="info-item"><div class="info-icon">📧</div><div><div class="info-lbl">E-Mail</div><div class="info-val">hallo@mamafigur.ch</div></div></div>
+        <div class="info-item"><div class="info-icon">📸</div><div><div class="info-lbl">Instagram</div><div class="info-val">@mamafigur</div></div></div>
+        <div class="info-item"><div class="info-icon">🇨🇭</div><div><div class="info-lbl">Standort</div><div class="info-val">Schweiz · Remote weltweit</div></div></div>
+        <div class="info-item"><div class="info-icon">🗣️</div><div><div class="info-lbl">Sprachen</div><div class="info-val">Deutsch & Français</div></div></div>
+        <div class="info-item"><div class="info-icon">⏱️</div><div><div class="info-lbl">Antwortzeit</div><div class="info-val">24–48 Stunden</div></div></div>
 
-        <!-- IMPRESSUM -->
-        <div style="background:var(--warm-white);border-radius:16px;padding:28px;border:1px solid var(--border);">
-          <h3 style="font-size:18px;margin-bottom:16px;font-weight:500;">Impressum</h3>
-          <p style="font-size:13px;color:var(--mid);line-height:1.8;font-weight:300;">
-            <strong style="color:var(--charcoal);">MamaFigur</strong><br>
-            [Vollständiger Name]<br>
-            [Adresse]<br>
-            [PLZ] [Ort], Schweiz<br><br>
-            E-Mail: hallo@mamafigur.ch<br><br>
-            UID: [CHE-xxx.xxx.xxx]<br><br>
-            <em>Inhaltlich verantwortlich für diese Website: [Name]</em><br><br>
-            Haftungsausschluss: Die Inhalte dieser Website wurden mit grösster Sorgfalt erstellt. Sie ersetzen keine medizinische oder ernährungswissenschaftliche Beratung durch Fachpersonen.
-          </p>
+        <!-- FAQ rapide -->
+        <div style="margin-top:32px">
+          <span class="lbl" style="margin-bottom:16px">Häufige Fragen</span>
+          <div style="display:flex;flex-direction:column">
+            <div class="faq-item"><div class="faq-q" style="font-size:16px">Ist das Erstgespräch wirklich kostenlos?</div><div class="faq-a">Ja, 100% kostenlos und unverbindlich. Kein Verkaufsdruck — ich möchte einfach sehen, ob wir gut zusammenpassen.</div></div>
+            <div class="faq-item"><div class="faq-q" style="font-size:16px">Geht das auch auf Français?</div><div class="faq-a">Absolut. Ich bin zweisprachig aufgewachsen und biete alle Leistungen auf Deutsch und Français an.</div></div>
+            <div class="faq-item"><div class="faq-q" style="font-size:16px">Wie findet das Coaching statt?</div><div class="faq-a">Alles via Zoom — du brauchst keinen Babysitter und kannst von überall teilnehmen. Auch WhatsApp-Support ist inklusive.</div></div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<footer class="footer">
-  <div class="container">
-    <div class="footer__grid">
-      <div class="footer__brand">
-        <a href="index.html" class="nav__logo">Mama<span style="color:var(--terra)">Figur</span></a>
-        <p>Begleitung für junge Mamas in der Schweiz.</p>
-        <div class="footer__social"><a href="#">📸</a><a href="#">📌</a><a href="#">📘</a></div>
-      </div>
-      <div class="footer__col"><h4>Navigation</h4><ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="meine-geschichte.html">Meine Geschichte</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="coaching.html">Coaching</a></li>
-        <li><a href="kontakt.html">Kontakt</a></li>
-      </ul></div>
-      <div class="footer__col"><h4>Themen</h4><ul>
-        <li><a href="blog.html">Schwangerschaft</a></li>
-        <li><a href="blog.html">Nach der Geburt</a></li>
-        <li><a href="blog.html">Ernährung</a></li>
-        <li><a href="blog.html">Training</a></li>
-      </ul></div>
-      <div class="footer__col"><h4>Rechtliches</h4><ul>
-        <li><a href="kontakt.html">Impressum</a></li>
-        <li><a href="kontakt.html">Datenschutz</a></li>
-        <li><a href="kontakt.html">AGB</a></li>
-      </ul></div>
+<!-- IMPRESSUM & DATENSCHUTZ -->
+<section class="section section--alt" id="impressum">
+  <div class="container" style="max-width:760px">
+    <div class="legal-box">
+      <h3>Impressum</h3>
+      <p>
+        <strong>MamaFigur</strong><br>
+        [Vollständiger Name]<br>
+        [Strasse und Nr.]<br>
+        [PLZ] [Ort], Schweiz<br><br>
+        E-Mail: hallo@mamafigur.ch<br>
+        Website: www.mamafigur.ch<br><br>
+        UID: [CHE-xxx.xxx.xxx] (nach Anmeldung ausfüllen)<br><br>
+        <em>Inhaltlich verantwortlich für diese Website: [Vollständiger Name]</em>
+      </p>
     </div>
-    <div class="footer__bottom"><span>© 2025 MamaFigur.ch</span><span>Made with 💚 in der Schweiz</span></div>
-    <p class="footer__disclaimer">Hinweis: Die Inhalte dieser Website ersetzen keine medizinische Beratung.</p>
+    <div class="legal-box" id="datenschutz" style="margin-top:16px">
+      <h3>Datenschutzerklärung</h3>
+      <p>
+        <strong>Verantwortliche Stelle:</strong> MamaFigur, [Adresse], Schweiz<br><br>
+        <strong>Erhobene Daten:</strong> Bei der Nutzung des Kontaktformulars werden Name, E-Mail-Adresse und der Inhalt deiner Nachricht gespeichert. Diese Daten werden ausschließlich zur Beantwortung deiner Anfrage verwendet.<br><br>
+        <strong>Formspree:</strong> Das Kontaktformular nutzt den Dienst Formspree (formspree.io). Deine Daten werden über deren Server übertragen. Weitere Informationen findest du unter formspree.io/legal/privacy-policy.<br><br>
+        <strong>Weitergabe:</strong> Deine Daten werden nicht an Dritte weitergegeben und nicht für Werbezwecke verwendet.<br><br>
+        <strong>Löschung:</strong> Deine Daten werden gelöscht, sobald sie nicht mehr benötigt werden. Du kannst die Löschung jederzeit per E-Mail anfragen.<br><br>
+        <strong>Rechte:</strong> Du hast das Recht auf Auskunft, Berichtigung und Löschung deiner gespeicherten Daten. Kontakt: hallo@mamafigur.ch<br><br>
+        <em>Stand: März 2025</em>
+      </p>
+    </div>
   </div>
-</footer>
+</section>
+
+<footer><div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand"><a href="index.html" class="footer-logo">Mama<span>Figur</span></a><p>Begleitung für junge Mamas in der Schweiz.</p><div class="footer-social"><a href="#">📸</a><a href="#">📌</a><a href="#">📘</a></div></div>
+    <div class="footer-col"><h4>Navigation</h4><ul><li><a href="index.html">Home</a></li><li><a href="meine-geschichte.html">Meine Geschichte</a></li><li><a href="blog.html">Blog</a></li><li><a href="coaching.html">Coaching</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
+    <div class="footer-col"><h4>Artikel</h4><ul><li><a href="articles/abnehmen-schwangerschaft.html">Abnehmen in der Schwangerschaft</a></li><li><a href="articles/nach-geburt-abnehmen.html">Nach der Geburt</a></li><li><a href="articles/ernaehrungsplan.html">Ernährungsplan</a></li><li><a href="articles/sport-nach-geburt.html">Sport</a></li></ul></div>
+    <div class="footer-col"><h4>Rechtliches</h4><ul><li><a href="kontakt.html#impressum">Impressum</a></li><li><a href="kontakt.html#datenschutz">Datenschutz</a></li><li><a href="kontakt.html">AGB</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 MamaFigur.ch</span><span>Made with 💚 in der Schweiz</span></div>
+  <p class="footer-disc">Hinweis: Die Inhalte dieser Website ersetzen keine medizinische Beratung.</p>
+</div></footer>
 
 <script src="js/main.js"></script>
-</body>
-</html>
+<script>
+// Formspree AJAX submit with success state
+const form = document.getElementById('contact-form');
+const success = document.getElementById('form-success');
+if (form) {
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    btn.textContent = 'Wird gesendet...';
+    btn.disabled = true;
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.style.display = 'none';
+        success.style.display = 'block';
+      } else {
+        btn.textContent = 'Fehler — bitte per E-Mail schreiben';
+        btn.disabled = false;
+      }
+    } catch(err) {
+      btn.textContent = 'Fehler — bitte per E-Mail schreiben';
+      btn.disabled = false;
+    }
+  });
+}
+</script>
+</body></html>
